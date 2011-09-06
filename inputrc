@@ -1,0 +1,41 @@
+# enable vi mode
+#set editing-mode vi
+#set keymap vi
+
+# enable 8-bit input/output
+set convert-meta off
+set input-meta on
+set output-meta on
+
+set bell-style none
+set completion-ignore-case off
+set mark-directories on
+set match-hidden-files off
+set show-all-if-ambiguous on
+set visible-stats on
+
+# enable history expansion after space
+$if Bash
+	Space: magic-space
+$endif
+
+# mappings for ctrl+arrow
+"\e[5A": history-search-backward
+"\e[5B": history-search-forward
+"\e[5C": forward-word
+"\e[5D": backward-word
+"\e[1;5A": history-search-backward
+"\e[1;5B": history-search-forward
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+"\e\e[A": history-search-backward
+"\e\e[B": history-search-forward
+"\e\e[C": forward-word
+"\e\e[D": backward-word
+"\eOa": history-search-backward
+"\eOb": history-search-forward
+"\eOc": forward-word
+"\eOd": backward-word
+
+"\C-i": menu-complete
+"\C-\M-r": redraw-current-line

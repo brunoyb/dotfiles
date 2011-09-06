@@ -1,0 +1,17 @@
+Installation:
+
+	$ git clone https://github.com/brunoyb/dotfiles.git && cd dotfiles
+
+Checkout Vim plugins:
+
+	$ git submodule update --init
+
+Create symlinks:
+
+	$ ln -s "$(pwd)/bash_logout" ~/.bash_logout
+	$ ln -s "$(pwd)/bash_profile" ~/.bash_profile
+	$ ln -s "$(pwd)/bashrc" ~/.bashrc
+	$ ln -s "$(pwd)/inputrc" ~/.inputrc
+	$ ln -s "$(pwd)/profile" ~/.profile
+	$ ln -s "$(pwd)/vim" ~/.vim
+	$ ln -s "$(pwd)/vimrc" ~/.vimrc
