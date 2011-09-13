@@ -4,6 +4,37 @@
 export EDITOR='vim'
 export HISTCONTROL='ignoredups:erasedups'
 
+# console colors {{{1
+if [ "$TERM" = "linux" ]
+then
+	# black
+	echo -en "\e]P0000000"
+	echo -en "\e]P86A6A6A"
+	# red
+	echo -en "\e]P1E01010"
+	echo -en "\e]P9E83A3D"
+	# green
+	echo -en "\e]P220AD20"
+	echo -en "\e]PA35E956"
+	# yellow
+	echo -en "\e]P3D4C24F"
+	echo -en "\e]PBFFFF2F"
+	# blue
+	echo -en "\e]P4231BB8"
+	echo -en "\e]PC3A53F0"
+	# magenta
+	echo -en "\e]P59C3885"
+	echo -en "\e]PDE628BA"
+	# cyan
+	echo -en "\e]P61DBDB8"
+	echo -en "\e]PE1CF5F5"
+	# white
+	echo -en "\e]P7FEFEFE"
+	echo -en "\e]PFFFFFFF"
+
+	clear # for background artifacting
+fi
+
 # keychain {{{1
 if [ -x /usr/bin/keychain ]
 then
@@ -41,13 +72,14 @@ alias mv='mv -i'
 alias rm='rm -I'
 
 # misc {{{2
+alias g='gvim --remote-silent'
 alias grep='grep --color=auto'
 alias tsync='rsync -mrtvz --delete-after'
 
 # functions {{{1
-function calc()    { awk "BEGIN { print              $* }"; }
-function hex2dec() { awk "BEGIN { printf \"%d\n\", 0x$1 }"; }
+function    calc() { awk "BEGIN { print $* }"; }
 function dec2hex() { awk "BEGIN { printf \"%x\n\",   $1 }"; }
+function hex2dec() { awk "BEGIN { printf \"%d\n\", 0x$1 }"; }
 
 # prompt {{{1
 function bash_prompt()

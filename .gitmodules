@@ -5,6 +5,15 @@
 	path = vim/bundle/FuzzyFinder
 	url = https://github.com/vim-scripts/FuzzyFinder.git
 	ignore = dirty
+[submodule "vim/bundle/inkpot"]
+	path = vim/bundle/inkpot
+	url = https://github.com/ciaranm/inkpot.git
+[submodule "vim/bundle/jellybeans.vim"]
+	path = vim/bundle/jellybeans.vim
+	url = https://github.com/nanotech/jellybeans.vim.git
+[submodule "vim/bundle/jellyx.vim"]
+	path = vim/bundle/jellyx.vim
+	url = https://github.com/guns/jellyx.vim.git
 [submodule "vim/bundle/L9"]
 	path = vim/bundle/L9
 	url = https://github.com/vim-scripts/L9.git
@@ -26,9 +35,15 @@
 	path = vim/bundle/snipmate.vim
 	url = https://github.com/msanders/snipmate.vim.git
 	ignore = dirty
+[submodule "vim/bundle/tabular"]
+	path = vim/bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
+[submodule "vim/bundle/vim-colors-solarized"]
+	path = vim/bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "vim/bundle/vim-commentary"]
 	path = vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary
@@ -55,6 +70,9 @@
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround
+[submodule "vim/bundle/vim-vividchalk"]
+	path = vim/bundle/vim-vividchalk
+	url = https://github.com/tpope/vim-vividchalk.git
 [submodule "vim/bundle/vimwiki"]
 	path = vim/bundle/vimwiki
 	url = https://github.com/vim-scripts/vimwiki.git

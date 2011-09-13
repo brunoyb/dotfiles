@@ -1,0 +1,167 @@
+! Xcursor {{{1
+Xcursor.theme: Vanilla-DMZ
+Xcursor.theme_core: true
+Xcursor.size: 16
+
+! Xft {{{1
+Xft.antialias: true
+Xft.autohint: false
+Xft.dpi: 96
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
+
+! URxvt {{{1
+!URxvt*font: -*-terminus-medium-*-*-*-24-*-*-*-*-*-*-*
+!URxvt*boldFont: -*-terminus-bold-*-*-*-24-*-*-*-*-*-*-*
+URxvt*font: xft:Terminus-18
+URxvt*highlightSelection: true
+URxvt*loginShell: false
+URxvt*perl-ext-common: default,url-select
+URxvt*underlineURLs: true
+URxvt*urlLauncher: chromium
+URxvt*searchable-scrollback: Control-Meta-s
+URxvt*cursorBlink: true
+
+! bell {{{2
+URxvt*urgentOnBell: true
+URxvt*visualBell: false
+
+! scrolling {{{2
+URxvt*saveLines: 1024
+URxvt*jumpScroll: true
+URxvt*skipScroll: true
+URxvt*scrollTtyKeypress: true
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+
+! keybindings {{{2
+URxvt*keysym.Control-Up: \033[1;5A
+URxvt*keysym.Control-Down: \033[1;5B
+URxvt*keysym.Control-Right: \033[1;5C
+URxvt*keysym.Control-Left: \033[1;5D
+URxvt*keysym.Meta-Up: \033[1;3A
+URxvt*keysym.Meta-Down: \033[1;3B
+URxvt*keysym.Meta-Right: \033[1;3C
+URxvt*keysym.Meta-Left: \033[1;3D
+URxvt*keysym.Meta-u: perl:url-select:select_next
+URxvt*keysym.Shift-Meta-Prior: command:\033]720;1\007
+URxvt*keysym.Shift-Meta-Next: command:\033]721;1\007
+
+! scrollbar {{{2
+URxvt*scrollstyle: plain
+URxvt*scrollBar: false
+URxvt*scrollBar_right: true
+
+! border {{{2
+URxvt*borderLess: false
+URxvt*externalBorder: 0
+URxvt*internalBorder: 0
+
+! colors {{{2
+URxvt*depth: 24
+!URxvt*fading: 40
+URxvt*borderColor: #000000
+URxvt*cursorColor: #FFFFFF
+URxvt*fadeColor: #000000
+URxvt*scrollColor: #000000
+URxvt*background: #000000
+URxvt*foreground: #FFFFFF
+! black
+URxvt*color0: #000000
+URxvt*color8: #6A6A6A
+! red
+URxvt*color1: #E01010
+URxvt*color9: #E83A3D
+! green
+URxvt*color2: #20AD20
+URxvt*color10: #35E956
+! yellow
+URxvt*color3: #D4C24F
+URxvt*color11: #FFFF2F
+! blue
+URxvt*color4: #231BB8
+URxvt*color12: #3A53F0
+! magenta
+URxvt*color5: #9C3885
+URxvt*color13: #E628BA
+! cyan
+URxvt*color6: #1DBDB8
+URxvt*color14: #1CF5F5
+! white
+URxvt*color7: #FEFEFE
+URxvt*color15: #FFFFFF
+
+! XTerm {{{1
+XTerm*allowSendEvents: true
+!XTerm*font: -*-terminus-medium-*-*-*-24-*-*-*-*-*-*-*
+!XTerm*boldFont: -*-terminus-bold-*-*-*-24-*-*-*-*-*-*-*
+XTerm*faceName: Terminus
+XTerm*faceSize: 18
+XTerm*loginShell: false
+XTerm*sessionMgt: false
+XTerm*highlightSelection: true
+XTerm*termName: xterm-256color
+
+XTerm*autoWrap: true
+XTerm*cursorBlink: true
+XTerm*metaSendsEscape: true
+XTerm*eightBitInput: false
+
+! bell {{{2
+XTerm*bellIsUrgent: true
+XTerm*visualBell: false
+
+! scrolling {{{2
+XTerm*saveLines: 1024
+XTerm*jumpScroll: true
+XTerm*multiScroll: true
+XTerm*scrollKey: true
+XTerm*scrollTtyOutput: false
+
+! keybindings {{{2
+XTerm*VT100.translations: #override \n\
+	Shift Meta <KeyPress> Prior: scroll-back(1, line) \n\
+	Shift Meta <KeyPress> Next: scroll-forw(1, line) \n\
+
+! scrollbar {{{2
+XTerm*scrollBar: false
+XTerm*rightScrollBar: true
+
+! border {{{2
+XTerm*externalBorder: 0
+XTerm*internalBorder: 0
+
+! colors {{{2
+XTerm*dynamicColors: true
+XTerm*borderColor: #000000
+XTerm*cursorColor: #FFFFFF
+XTerm*pointerColorBackground: #000000
+XTerm*pointerColorForeground: #FFFFFF
+XTerm*background: #000000
+XTerm*foreground: #FFFFFF
+! black
+XTerm*color0: #000000
+XTerm*color8: #6A6A6A
+! red
+XTerm*color1: #E01010
+XTerm*color9: #E83A3D
+! green
+XTerm*color2: #20AD20
+XTerm*color10: #35E956
+! yellow
+XTerm*color3: #D4C24F
+XTerm*color11: #FFFF2F
+! blue
+XTerm*color4: #231BB8
+XTerm*color12: #3A53F0
+! magenta
+XTerm*color5: #9C3885
+XTerm*color13: #E628BA
+! cyan
+XTerm*color6: #1DBDB8
+XTerm*color14: #1CF5F5
+! white
+XTerm*color7: #FEFEFE
+XTerm*color15: #FFFFFF
