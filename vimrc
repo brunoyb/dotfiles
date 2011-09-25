@@ -11,7 +11,7 @@ set showcmd
 set showmode
 set showtabline=1
 set virtualedit=all
-set joinspaces
+set nojoinspaces
 set viminfo='100,<50,s10,h
 set nrformats=hex
 set hidden
@@ -86,6 +86,8 @@ let NERDTreeWinSize = 30
 let g:tagbar_width = 30
 
 " keybindings {{{1
+nmap <silent> ,N :<C-U>execute 'bprevious ' . (v:count == 0 ? '' : v:count)<CR>
+nmap <silent> ,P :<C-U>execute 'bnext     ' . (v:count == 0 ? '' : v:count)<CR>
 nmap <silent> ,n :<C-U>execute 'bnext     ' . (v:count == 0 ? '' : v:count)<CR>
 nmap <silent> ,p :<C-U>execute 'bprevious ' . (v:count == 0 ? '' : v:count)<CR>
 nnoremap <silent> ,1 :buffer  1<CR>
