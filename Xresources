@@ -8,14 +8,23 @@ Xft.antialias: true
 Xft.autohint: false
 Xft.dpi: 96
 Xft.hinting: true
-Xft.hintstyle: hintslight
+Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault
 Xft.rgba: rgb
 
 ! URxvt {{{1
-!URxvt*font: -*-terminus-medium-*-*-*-24-*-*-*-*-*-*-*
-!URxvt*boldFont: -*-terminus-bold-*-*-*-24-*-*-*-*-*-*-*
-URxvt*font: xft:Terminus-18
+!URxvt*font: -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1
+!URxvt*boldFont: -xos4-terminus-bold-r-normal--14-140-72-72-c-80-iso10646-1
+!URxvt*italicFont: -windows-dina-medium-i-normal--16-100-96-96-c-80-microsoft-cp1252
+!URxvt*boldItalicFont: -windows-dina-bold-i-normal--16-100-96-96-c-80-microsoft-cp1252
+!URxvt*font: -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1
+!URxvt*boldFont: -misc-fixed-bold-r-normal--18-120-100-100-c-90-iso10646-1
+!URxvt*italicFont: -misc-fixed-medium-o-normal--13-120-75-75-c-80-iso10646-1
+!URxvt*boldItalicFont: -windows-dina-bold-i-normal--16-100-96-96-c-80-microsoft-cp1252
+URxvt*font: xft:Terminus:style=Regular:pixelsize=14:antialias=False
+URxvt*boldFont: xft:Terminus:style=Bold:pixelsize=14:antialias=False
+URxvt*italicFont: xft:Dina:style=Italic:pixelsize=14:antialias=False
+URxvt*boldItalicFont: xft:Dina:style=Bold Italic:pixelsize=14:antialias=False
 URxvt*highlightSelection: true
 URxvt*loginShell: false
 URxvt*perl-ext-common: default,url-select
@@ -95,10 +104,8 @@ URxvt*color15: #FFFFFF
 
 ! XTerm {{{1
 XTerm*allowSendEvents: true
-!XTerm*font: -*-terminus-medium-*-*-*-24-*-*-*-*-*-*-*
-!XTerm*boldFont: -*-terminus-bold-*-*-*-24-*-*-*-*-*-*-*
-XTerm*faceName: Terminus
-XTerm*faceSize: 18
+XTerm*font: -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1
+XTerm*boldFont: -xos4-terminus-bold-r-normal--14-140-72-72-c-80-iso10646-1
 XTerm*loginShell: false
 XTerm*sessionMgt: false
 XTerm*highlightSelection: true

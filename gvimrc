@@ -4,4 +4,4 @@ set guioptions-=L
 set guioptions-=m
 set guioptions-=r
 set guioptions-=T
-set guifont=Terminus\ 18
+set guifont=Terminus\ 10
