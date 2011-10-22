@@ -31,10 +31,6 @@
 [submodule "vim/bundle/renamer.vim"]
 	path = vim/bundle/renamer.vim
 	url = https://github.com/vim-scripts/renamer.vim.git
-[submodule "vim/bundle/snipmate.vim"]
-	path = vim/bundle/snipmate.vim
-	url = https://github.com/msanders/snipmate.vim.git
-	ignore = dirty
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
@@ -47,6 +43,10 @@
 [submodule "vim/bundle/vim-commentary"]
 	path = vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary
+[submodule "vim/bundle/vim-fswitch"]
+	path = vim/bundle/vim-fswitch
+	url = https://github.com/derekwyatt/vim-fswitch.git
+	ignore = dirty
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
@@ -76,4 +76,8 @@
 [submodule "vim/bundle/vimwiki"]
 	path = vim/bundle/vimwiki
 	url = https://github.com/vim-scripts/vimwiki.git
+	ignore = dirty
+[submodule "vim/bundle/xptemplate"]
+	path = vim/bundle/xptemplate
+	url = https://github.com/drmingdrmer/xptemplate.git
 	ignore = dirty
