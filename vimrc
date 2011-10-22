@@ -31,7 +31,19 @@ function! RestoreCursor()
 endfunction
 
 " autocmd {{{1
-augroup vimrc
+augroup mycppfiles
+	autocmd!
+	autocmd BufEnter *.cpp let b:fswitchdst = 'hpp'
+	autocmd BufEnter *.cpp let b:fswitchlocs = 'reg:/src/include/,reg:|src|include/**|,../include'
+augroup END
+
+augroup myhppfiles
+	autocmd!
+	autocmd BufEnter *.hpp let b:fswitchdst = 'cpp'
+	autocmd BufEnter *.hpp let b:fswitchlocs = 'reg:/include/src/,reg:/include.*/src/,../src'
+augroup END
+
+augroup myvimrc
 	autocmd!
 	autocmd BufReadPost * call RestoreCursor()
 augroup END
@@ -66,7 +78,7 @@ set smartindent
 
 " statusline {{{1
 set laststatus=2
-set statusline=%<%f\ %y%{GetEncoding()}%m%h%w%r%=%-14.(%l,%c%V%)\ %P
+set statusline=%<%t\ %y%{GetEncoding()}%m%h%w%r%=%-14.(%l,%c%V%)\ %P
 
 " show unprintable characters {{{1
 set list
