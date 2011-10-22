@@ -74,7 +74,7 @@ alias rm='rm -I'
 # misc {{{2
 alias g='gvim --remote-silent'
 alias grep='grep --color=auto'
-alias tsync='rsync -mrtvz --delete-after'
+alias tsync='rsync -avz --delete-after'
 
 # functions {{{1
 function    calc() { awk "BEGIN { print $* }"; }

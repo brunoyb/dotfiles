@@ -82,6 +82,7 @@ colorscheme molokai
 
 " misc {{{1
 let loaded_matchparen = 1 " don't highlight matching parens
+let g:load_doxygen_syntax = 1
 let NERDTreeWinSize = 30
 let g:tagbar_width = 30
 
