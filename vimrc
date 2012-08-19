@@ -15,7 +15,7 @@ set nojoinspaces
 set viminfo='100,<50,s10,h
 set nrformats=hex
 set hidden
-set cursorline
+"set cursorline
 
 " functions {{{1
 " GetEncoding() {{{2
@@ -34,13 +34,13 @@ endfunction
 augroup mycppfiles
 	autocmd!
 	autocmd BufEnter *.cpp let b:fswitchdst = 'hpp'
-	autocmd BufEnter *.cpp let b:fswitchlocs = 'reg:/src/include/,reg:|src|include/**|,../include'
+	autocmd BufEnter *.cpp let b:fswitchlocs = '.'
 augroup END
 
 augroup myhppfiles
 	autocmd!
 	autocmd BufEnter *.hpp let b:fswitchdst = 'cpp'
-	autocmd BufEnter *.hpp let b:fswitchlocs = 'reg:/include/src/,reg:/include.*/src/,../src'
+	autocmd BufEnter *.hpp let b:fswitchlocs = '.'
 augroup END
 
 augroup myvimrc
@@ -93,10 +93,25 @@ filetype plugin indent on
 colorscheme molokai
 
 " misc {{{1
+let NERDTreeWinSize = 30
 let loaded_matchparen = 1 " don't highlight matching parens
 let g:load_doxygen_syntax = 1
-let NERDTreeWinSize = 30
+
+let g:vimwiki_browsers = ['chromium']
+let g:vimwiki_list = [{
+	\ 'template_path': '~/vimwiki_html/templates/',
+	\ 'template_default': 'default',
+	\ 'template_ext': '.tpl'
+\ }]
+
 let g:tagbar_width = 30
+let g:tagbar_type_vimwiki = {
+	\ 'ctagstype' : 'vimwiki',
+	\ 'kinds'     : [
+		\ 'h:Headers'
+	\ ],
+	\ 'sort'      : 0
+\ }
 
 " keybindings {{{1
 nmap <silent> ,N :<C-U>execute 'bprevious ' . (v:count == 0 ? '' : v:count)<CR>
