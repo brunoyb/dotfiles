@@ -11,6 +11,7 @@ Create symlinks:
 	$ ln -s "$(pwd)/bash_logout" ~/.bash_logout
 	$ ln -s "$(pwd)/bash_profile" ~/.bash_profile
 	$ ln -s "$(pwd)/bashrc" ~/.bashrc
+	$ ln -s "$(pwd)/ctags" ~/.ctags
 	$ ln -s "$(pwd)/gtkrc-2.0" ~/.gtkrc-2.0
 	$ ln -s "$(pwd)/gvimrc" ~/.gvimrc
 	$ ln -s "$(pwd)/inputrc" ~/.inputrc

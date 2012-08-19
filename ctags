@@ -1,0 +1,3 @@
+--langdef=vimwiki
+--langmap=vimwiki:.wiki
+--regex-vimwiki=/^(={1,6})[ \t]+(.+)[ \t]+\1$/\2/h,header/
