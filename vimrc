@@ -15,7 +15,7 @@ set nojoinspaces
 set viminfo='100,<50,s10,h
 set nrformats=hex
 set hidden
-"set cursorline
+set cursorline
 
 " functions {{{1
 " GetEncoding() {{{2
@@ -56,9 +56,9 @@ set undodir=~/.vim/undo
 
 " scrolling {{{1
 set nowrap
-"set scrolloff=5
-"set sidescroll=1
-"set sidescrolloff=5
+" set scrolloff=5
+" set sidescroll=1
+" set sidescrolloff=5
 
 " folding {{{1
 set foldenable
@@ -86,8 +86,8 @@ set listchars=extends:»,precedes:«,tab:>·,trail:·
 set showbreak=+++
 
 " syntax {{{1
-syntax enable
 filetype plugin indent on
+syntax enable
 
 " colorscheme {{{1
 colorscheme molokai
@@ -95,7 +95,7 @@ colorscheme molokai
 " misc {{{1
 let NERDTreeWinSize = 30
 let loaded_matchparen = 1 " don't highlight matching parens
-let g:load_doxygen_syntax = 1
+" let g:load_doxygen_syntax = 1
 
 let g:vimwiki_browsers = ['chromium']
 let g:vimwiki_list = [{
