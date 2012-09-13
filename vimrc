@@ -128,6 +128,8 @@ nnoremap <silent> ,7 :buffer  7<CR>
 nnoremap <silent> ,8 :buffer  8<CR>
 nnoremap <silent> ,9 :buffer  9<CR>
 nnoremap <silent> ,0 :buffer 10<CR>
+nnoremap <silent> ,d :bd<CR>
+nnoremap <silent> ,c :BD<CR>
 nnoremap <silent> ,, <C-^>
 nnoremap <silent> ,h <C-W>h
 nnoremap <silent> ,j <C-W>j
