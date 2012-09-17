@@ -13,33 +13,35 @@ Xft.lcdfilter: lcddefault
 Xft.rgba: rgb
 
 ! URxvt {{{1
-!URxvt*font: -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1
-!URxvt*boldFont: -xos4-terminus-bold-r-normal--14-140-72-72-c-80-iso10646-1
-!URxvt*italicFont: -windows-dina-medium-i-normal--16-100-96-96-c-80-microsoft-cp1252
-!URxvt*boldItalicFont: -windows-dina-bold-i-normal--16-100-96-96-c-80-microsoft-cp1252
-!URxvt*font: -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1
-!URxvt*boldFont: -misc-fixed-bold-r-normal--18-120-100-100-c-90-iso10646-1
-!URxvt*italicFont: -misc-fixed-medium-o-normal--13-120-75-75-c-80-iso10646-1
-!URxvt*boldItalicFont: -windows-dina-bold-i-normal--16-100-96-96-c-80-microsoft-cp1252
-URxvt*font: xft:Terminus:style=Regular:pixelsize=14:antialias=False,\
-            xft:IPAGothic:style=Regular,\
-            xft:Baekmuk Gulim:style=Regular
-URxvt*boldFont: xft:Terminus:style=Bold:pixelsize=14:antialias=False,\
-                xft:IPAGothic:style=Bold,\
-                xft:Baekmuk Gulim:style=Bold
-URxvt*italicFont: xft:Dina:style=Italic:pixelsize=14:antialias=False,\
-                  xft:IPAGothic:style=Italic,\
-                  xft:Baekmuk Gulim:style=Italic
-URxvt*boldItalicFont: xft:Dina:style=Bold Italic:pixelsize=14:antialias=False,\
-                      xft:IPAGothic:style=Bold Italic,\
-                      xft:Baekmuk Gulim:style=Bold Italic
 URxvt*highlightSelection: true
 URxvt*loginShell: false
-URxvt*perl-ext-common: default,url-select
+URxvt*perl-ext-common: default,clipboard,keyboard-select,url-select
 URxvt*underlineURLs: true
 URxvt*urlLauncher: chromium
 URxvt*searchable-scrollback: Control-Meta-s
 URxvt*cursorBlink: true
+
+! fonts {{{2
+!URxvt*font:           -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1
+!URxvt*boldFont:       -xos4-terminus-bold-r-normal--14-140-72-72-c-80-iso10646-1
+!URxvt*italicFont:     -windows-dina-medium-i-normal--16-100-96-96-c-80-microsoft-cp1252
+!URxvt*boldItalicFont: -windows-dina-bold-i-normal--16-100-96-96-c-80-microsoft-cp1252
+!URxvt*font:           -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1
+!URxvt*boldFont:       -misc-fixed-bold-r-normal--18-120-100-100-c-90-iso10646-1
+!URxvt*italicFont:     -misc-fixed-medium-o-normal--13-120-75-75-c-80-iso10646-1
+!URxvt*boldItalicFont: -windows-dina-bold-i-normal--16-100-96-96-c-80-microsoft-cp1252
+URxvt*font:           xft:Terminus:style=Regular:pixelsize=14:antialias=False,\
+                      xft:IPAGothic:style=Regular,\
+                      xft:Baekmuk Gulim:style=Regular
+URxvt*boldFont:       xft:Terminus:style=Bold:pixelsize=14:antialias=False,\
+                      xft:IPAGothic:style=Bold,\
+                      xft:Baekmuk Gulim:style=Bold
+URxvt*italicFont:     xft:Dina:style=Italic:pixelsize=14:antialias=False,\
+                      xft:IPAGothic:style=Italic,\
+                      xft:Baekmuk Gulim:style=Italic
+URxvt*boldItalicFont: xft:Dina:style=Bold Italic:pixelsize=14:antialias=False,\
+                      xft:IPAGothic:style=Bold Italic,\
+                      xft:Baekmuk Gulim:style=Bold Italic
 
 ! bell {{{2
 URxvt*urgentOnBell: true
@@ -55,13 +57,15 @@ URxvt*scrollWithBuffer: true
 
 ! keybindings {{{2
 URxvt*keysym.Control-Up: \033[1;5A
-URxvt*keysym.Control-Down: \033[1;5B
 URxvt*keysym.Control-Right: \033[1;5C
+URxvt*keysym.Control-Down: \033[1;5B
 URxvt*keysym.Control-Left: \033[1;5D
 URxvt*keysym.Meta-Up: \033[1;3A
-URxvt*keysym.Meta-Down: \033[1;3B
 URxvt*keysym.Meta-Right: \033[1;3C
+URxvt*keysym.Meta-Down: \033[1;3B
 URxvt*keysym.Meta-Left: \033[1;3D
+URxvt*keysym.Meta-Escape: perl:keyboard-select:activate
+URxvt*keysym.Meta-s: perl:keyboard-select:search
 URxvt*keysym.Meta-u: perl:url-select:select_next
 URxvt*keysym.Shift-Meta-Prior: command:\033]720;1\007
 URxvt*keysym.Shift-Meta-Next: command:\033]721;1\007
@@ -112,8 +116,6 @@ URxvt*color15: #FFFFFF
 
 ! XTerm {{{1
 XTerm*allowSendEvents: true
-XTerm*font: -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1
-XTerm*boldFont: -xos4-terminus-bold-r-normal--14-140-72-72-c-80-iso10646-1
 XTerm*loginShell: false
 XTerm*sessionMgt: false
 XTerm*highlightSelection: true
@@ -123,6 +125,10 @@ XTerm*autoWrap: true
 XTerm*cursorBlink: true
 XTerm*metaSendsEscape: true
 XTerm*eightBitInput: false
+
+! fonts {{{2
+XTerm*font:     -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1
+XTerm*boldFont: -xos4-terminus-bold-r-normal--14-140-72-72-c-80-iso10646-1
 
 ! bell {{{2
 XTerm*bellIsUrgent: true
