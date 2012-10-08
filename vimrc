@@ -15,7 +15,7 @@ set nojoinspaces
 set viminfo='100,<50,s10,h
 set nrformats=hex
 set hidden
-set cursorline
+" set cursorline
 
 " functions {{{1
 " GetEncoding() {{{2
