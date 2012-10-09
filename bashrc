@@ -1,12 +1,18 @@
 [[ $- != *i* ]] && return # if not running interactively, don't do anything
 
 # environment {{{1
-export EDITOR='vim'
-export HISTCONTROL='ignoredups:erasedups'
+export EDITOR=vim
+export HISTCONTROL=ignoreboth
+export HISTSIZE=1000
+export HISTFILESIZE=2000
 
-# console colors {{{1
-if [ "$TERM" = "linux" ]
-then
+# shopt {{{1
+shopt -s histappend
+shopt -s checkwinsize
+
+# term colors {{{1
+case "$TERM" in
+linux)
 	# black
 	echo -en "\e]P0000000"
 	echo -en "\e]P86A6A6A"
@@ -33,7 +39,17 @@ then
 	echo -en "\e]PFFFFFFF"
 
 	clear # for background artifacting
-fi
+
+	;;
+xterm)
+	[ "$COLORTERM" == gnome-terminal ] && TERM=xterm-256color
+
+	;;
+screen)
+	[ "$COLORTERM" == gnome-terminal ] && TERM=screen-256color
+
+	;;
+esac
 
 # keychain {{{1
 if [ -x /usr/bin/keychain ]
@@ -52,7 +68,12 @@ then
 	fi
 fi
 
+# lesspipe {{{1
+[ -x /usr/bin/lesspipe ] && eval $(SHELL=/bin/sh lesspipe)
+
 # aliases {{{1
+[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
+
 # ls {{{2
 alias la='ls -a'
 alias lal='la -lh'
