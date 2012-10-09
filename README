@@ -8,6 +8,7 @@ Checkout Vim plugins:
 
 Create symlinks:
 
+	$ ln -s "$(pwd)/bash_aliases" ~/.bash_aliases
 	$ ln -s "$(pwd)/bash_logout" ~/.bash_logout
 	$ ln -s "$(pwd)/bash_profile" ~/.bash_profile
 	$ ln -s "$(pwd)/bashrc" ~/.bashrc
