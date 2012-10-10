@@ -74,6 +74,9 @@ fi
 # aliases {{{1
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 
+# local {{{1
+[[ -f ~/.bash_local ]] && . ~/.bash_local
+
 # ls {{{2
 alias la='ls -a'
 alias lal='la -lh'
