@@ -102,6 +102,12 @@ let g:vimwiki_list = [{
 	\ 'template_path': '~/vimwiki_html/templates/',
 	\ 'template_default': 'default',
 	\ 'template_ext': '.tpl'
+\ }, {
+	\ 'path': '~/dropbox/MeuCarrinho - Insights/Gestão de Benchmarking/vimwiki',
+	\ 'path_html': '~/dropbox/MeuCarrinho - Insights/Gestão de Benchmarking/vimwiki_html',
+	\ 'template_path': '~/dropbox/MeuCarrinho - Insights/Gestão de Benchmarking/vimwiki_html/templates/',
+	\ 'template_default': 'default',
+	\ 'template_ext': '.tpl'
 \ }]
 
 let g:tagbar_width = 30
