@@ -17,7 +17,7 @@ URxvt*highlightSelection: true
 URxvt*loginShell: false
 URxvt*perl-ext-common: default,clipboard,keyboard-select,url-select
 URxvt*underlineURLs: true
-URxvt*urlLauncher: chromium
+URxvt*url-launcher: chromium
 URxvt*searchable-scrollback: Control-Meta-s
 URxvt*cursorBlink: true
 
