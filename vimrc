@@ -103,9 +103,9 @@ let g:vimwiki_list = [{
 	\ 'template_default': 'default',
 	\ 'template_ext': '.tpl'
 \ }, {
-	\ 'path': '~/dropbox/MeuCarrinho - Insights/Gestão de Benchmarking/wiki_raw',
-	\ 'path_html': '~/dropbox/MeuCarrinho - Insights/Gestão de Benchmarking/wiki_html',
-	\ 'template_path': '~/dropbox/MeuCarrinho - Insights/Gestão de Benchmarking/wiki_html/templates/',
+	\ 'path': '~/dropbox/MeuCarrinho - Gestão/Gestão de Benchmarking/wiki_raw',
+	\ 'path_html': '~/dropbox/MeuCarrinho - Gestão/Gestão de Benchmarking/wiki_html',
+	\ 'template_path': '~/dropbox/MeuCarrinho - Gestão/Gestão de Benchmarking/wiki_html/templates/',
 	\ 'template_default': 'default',
 	\ 'template_ext': '.tpl'
 \ }]
