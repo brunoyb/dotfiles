@@ -3,6 +3,20 @@ set nocompatible
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
+if has("win32")
+	set encoding=utf-8
+
+	if has("gui_running")
+		set lines=24
+		set columns=80
+		set guifont=Consolas:h14
+		set guioptions-=L
+		set guioptions-=T
+		set guioptions-=m
+		set guioptions-=r
+	endif
+endif
+
 " general {{{1
 set backspace=indent,eol,start
 set cryptmethod=blowfish
@@ -50,9 +64,15 @@ augroup END
 
 " backup & undofile {{{1
 set backup
-set backupdir=~/.vim/backup
 set undofile
-set undodir=~/.vim/undo
+
+if has("unix")
+	set backupdir=~/.vim/backup,.
+	set undodir=~/.vim/undo,.
+elseif has("win32")
+	set backupdir=~\vimfiles\backup,.
+	set undodir=~\vimfiles\undo,.
+endif
 
 " scrolling {{{1
 set nowrap
