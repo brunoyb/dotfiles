@@ -3,33 +3,21 @@ set nocompatible
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
-if has("win32")
-	set encoding=utf-8
-
-	if has("gui_running")
-		set lines=24
-		set columns=80
-		set guifont=Consolas:h14
-		set guioptions-=L
-		set guioptions-=T
-		set guioptions-=m
-		set guioptions-=r
-	endif
+if has("win32") && has("gui_running")
+	set lines=24
+	set columns=80
+	set guifont=Consolas:h14
+	set guioptions-=L
+	set guioptions-=T
+	set guioptions-=m
+	set guioptions-=r
 endif
 
 " general {{{1
-set backspace=indent,eol,start
 set cryptmethod=blowfish
-set nonumber
 set showcmd
-set showmode
-set showtabline=1
 set virtualedit=all
 set nojoinspaces
-set viminfo='100,<50,s10,h
-set nrformats=hex
-set hidden
-" set cursorline
 
 " functions {{{1
 " GetEncoding() {{{2
@@ -67,26 +55,23 @@ set backup
 set undofile
 
 if has("unix")
-	set backupdir=~/.vim/backup,.
-	set undodir=~/.vim/undo,.
+	set backupdir^=~/.vim/backup
+	set undodir^=~/.vim/undo
 elseif has("win32")
-	set backupdir=~\vimfiles\backup,.
-	set undodir=~\vimfiles\undo,.
+	set backupdir^=~\vimfiles\backup
+	set undodir^=~\vimfiles\undo
 endif
 
 " scrolling {{{1
 set nowrap
-" set scrolloff=5
-" set sidescroll=1
-" set sidescrolloff=5
 
 " folding {{{1
 set foldenable
 set foldmethod=marker
 
 " search {{{1
-set hlsearch
 set incsearch
+set hlsearch
 
 " command-line completion {{{1
 set wildmenu
@@ -94,30 +79,27 @@ set wildmode=full
 
 " indent {{{1
 set autoindent
-set smartindent
+" set smartindent
 
 " statusline {{{1
-set laststatus=2
 set statusline=%<%t\ %y%{GetEncoding()}%m%h%w%r%=%-14.(%l,%c%V%)\ %P
 
 " show unprintable characters {{{1
 set list
-set listchars=extends:»,precedes:«,tab:>·,trail:·
-set showbreak=+++
-
-" syntax {{{1
-filetype plugin indent on
-syntax enable
+scriptencoding utf-8
+set listchars=tab:>·,trail:·,extends:»,precedes:«,nbsp:+
+scriptencoding
+" set showbreak=+++
 
 " colorscheme {{{1
 colorscheme molokai
 
 " misc {{{1
 let NERDTreeWinSize = 30
-let loaded_matchparen = 1 " don't highlight matching parens
+" let loaded_matchparen = 1 " don't highlight matching parens
 " let g:load_doxygen_syntax = 1
 
-let g:vimwiki_browsers = ['chromium']
+" let g:vimwiki_browsers = ['chromium']
 let g:vimwiki_list = [{
 	\ 'template_path': '~/vimwiki_html/templates/',
 	\ 'template_default': 'default',
@@ -164,12 +146,10 @@ nnoremap <silent> ,l <C-W>l
 nnoremap <silent> ,o <C-W>o
 nnoremap <silent> ,s <C-W>s
 nnoremap <silent> ,v <C-W>v
-nnoremap <silent> <F2> <ESC>:nohlsearch<CR>
-inoremap <silent> <F2> <ESC>:nohlsearch<CR>
-nnoremap <silent> <F3> <ESC>:NERDTreeToggle<CR>
-inoremap <silent> <F3> <ESC>:NERDTreeToggle<CR>
-nnoremap <silent> <F4> <ESC>:TagbarToggle<CR>
-inoremap <silent> <F4> <ESC>:TagbarToggle<CR>
+nnoremap <silent> <F2> <ESC>:NERDTreeToggle<CR>
+inoremap <silent> <F2> <ESC>:NERDTreeToggle<CR>
+nnoremap <silent> <F3> <ESC>:TagbarToggle<CR>
+inoremap <silent> <F3> <ESC>:TagbarToggle<CR>
 nnoremap <silent> <F5> <ESC>:bprevious<CR>
 inoremap <silent> <F5> <ESC>:bprevious<CR>
 nnoremap <silent> <F6> <ESC>:bnext<CR>
