@@ -95,6 +95,7 @@ scriptencoding
 colorscheme molokai
 
 " misc {{{1
+let NERDTreeChDirMode = 2
 let NERDTreeWinSize = 30
 " let loaded_matchparen = 1 " don't highlight matching parens
 " let g:load_doxygen_syntax = 1
