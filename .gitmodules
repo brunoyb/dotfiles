@@ -82,5 +82,5 @@
 	url = https://github.com/tpope/vim-vividchalk.git
 [submodule "vim/bundle/vimwiki"]
 	path = vim/bundle/vimwiki
-	url = https://github.com/vim-scripts/vimwiki.git
+	url = https://github.com/vimwiki/vimwiki.git
 	ignore = dirty
