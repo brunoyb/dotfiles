@@ -15,6 +15,7 @@ endif
 
 " general {{{1
 set cryptmethod=blowfish
+set hidden
 set showcmd
 set virtualedit=all
 set nojoinspaces
