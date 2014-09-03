@@ -75,6 +75,7 @@ set incsearch
 set hlsearch
 
 " command-line completion {{{1
+set wildignorecase
 set wildmenu
 set wildmode=full
 

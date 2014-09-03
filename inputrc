@@ -8,8 +8,9 @@ set input-meta on
 set output-meta on
 
 set bell-style none
-set completion-ignore-case off
+set completion-ignore-case on
 set mark-directories on
+set mark-symlinked-directories on
 set match-hidden-files off
 set show-all-if-ambiguous on
 set visible-stats on
@@ -38,4 +39,5 @@ $endif
 "\eOd": backward-word
 
 "\C-i": menu-complete
+"\e[Z": menu-complete-backward
 "\C-\M-r": redraw-current-line
