@@ -4,8 +4,8 @@ then
 fi
 
 [ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
-[ -d "$HOME/opt/android-studio/sdk/platform-tools" ] && PATH="$HOME/opt/android-studio/sdk/platform-tools:$PATH"
-[ -d "$HOME/opt/android-studio/sdk/tools" ] && PATH="$HOME/opt/android-studio/sdk/tools:$PATH"
+[ -d "$HOME/opt/android-sdk/platform-tools" ] && PATH="$HOME/opt/android-sdk/platform-tools:$PATH"
+[ -d "$HOME/opt/android-sdk/tools" ] && PATH="$HOME/opt/android-sdk/tools:$PATH"
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
 
 export PATH
