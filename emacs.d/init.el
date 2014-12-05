@@ -5,6 +5,9 @@
 
 ;(set-face-attribute 'default nil :font "DejaVu Sans Mono-10")
 
+;; completion mode
+(setq minibuffer-complete-cycle 'auto)
+
 ;; highlight region between point and mark
 (setq transient-mark-mode t)
 
@@ -48,9 +51,10 @@
 (package-initialize)
 
 ; defvar is the correct way to declare global variables
-; you might see setq as well, but setq is supposed to be use just to se variables,
+; you might see setq as well, but setq is supposed to be use just to set variables,
 ; not create them.
 (defvar required-packages '(haskell-mode
+                            minibuffer-complete-cycle
                             monokai-theme
                             smart-tabs-mode
                             zenburn-theme) "a list of packages to ensure are installed at launch.")
