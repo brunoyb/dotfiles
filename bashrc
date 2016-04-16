@@ -1,6 +1,7 @@
 [[ $- != *i* ]] && return # if not running interactively, don't do anything
 
 # environment {{{1
+export BROWSER=google-chrome-stable
 export EDITOR=vim
 export HISTCONTROL=ignoreboth
 export HISTSIZE=1000
@@ -54,7 +55,7 @@ esac
 # keychain {{{1
 if [ -x /usr/bin/keychain ]
 then
-	eval $(keychain --eval --nogui --quick --quiet id_rsa)
+	eval $(keychain --eval --agents ssh --quick --quiet id_rsa)
 fi
 
 # dircolors {{{1
