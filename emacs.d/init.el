@@ -95,17 +95,17 @@
 (add-hook 'ruby-mode-hook
           (lambda () (setq indent-tabs-mode t)))
 
-(require 'ispell)
-(setq ispell-program-name "hunspell")
-(setq ispell-local-dictionary-alist '((nil
-                                       "[[:alpha:]]" "[^[:alpha:]]" "[']"
-                                       nil ("-d" "en_US") nil iso-8859-1)
-                                      ("american"
-                                       "[[:alpha:]]" "[^[:alpha:]]" "[']"
-                                       nil ("-d" "en_US") nil iso-8859-1)
-                                      ("brasileiro"
-                                       "[[:alpha:]]" "[^[:alpha:]]" "[']"
-                                       nil ("-d" "pt_BR") nil iso-8859-1)))
+;(require 'ispell)
+;(setq ispell-program-name "hunspell")
+;(setq ispell-local-dictionary-alist '((nil
+;                                       "[[:alpha:]]" "[^[:alpha:]]" "[']"
+;                                       nil ("-d" "en_US") nil iso-8859-1)
+;                                      ("american"
+;                                       "[[:alpha:]]" "[^[:alpha:]]" "[']"
+;                                       nil ("-d" "en_US") nil iso-8859-1)
+;                                      ("brasileiro"
+;                                       "[[:alpha:]]" "[^[:alpha:]]" "[']"
+;                                       nil ("-d" "pt_BR") nil iso-8859-1)))
 
 (put 'upcase-region 'disabled nil)
 
