@@ -6,7 +6,7 @@ Checkout Vim plugins:
 
 	$ git submodule update --init
 
-Create symlinks:
+Create symlinks (Linux Bash):
 
 	$ ln -s "$(pwd)/bash_aliases" ~/.bash_aliases
 	$ ln -s "$(pwd)/bash_completion" ~/.bash_completion
@@ -22,3 +22,10 @@ Create symlinks:
 	$ ln -s "$(pwd)/vim" ~/.vim
 	$ ln -s "$(pwd)/vimrc" ~/.vimrc
 	$ ln -s "$(pwd)/Xresources" ~/.Xresources
+
+Create symlinks (Windows PowerShell 5.0):
+
+	$ New-Item -ItemType SymbolicLink -Path $home\.emacs.d -Target $pwd\emacs.d
+	$ New-Item -ItemType SymbolicLink -Path $home\.inputrc -Target $pwd\inputrc
+	$ New-Item -ItemType SymbolicLink -Path $home\vimfiles -Target $pwd\vim
+	$ New-Item -ItemType SymbolicLink -Path $home\_vimrc -Target $pwd\vimrc
