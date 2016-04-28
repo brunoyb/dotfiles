@@ -55,6 +55,7 @@
 (defvar required-packages '(haskell-mode
                             minibuffer-complete-cycle
                             monokai-theme
+                            powershell
                             smart-tabs-mode
                             zenburn-theme) "a list of packages to ensure are installed at launch.")
 
