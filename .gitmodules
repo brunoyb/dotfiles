@@ -64,6 +64,9 @@
 [submodule "vim/bundle/vim-pathogen"]
 	path = vim/bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
+[submodule "vim/bundle/vim-ps1"]
+	path = vim/bundle/vim-ps1
+	url = https://github.com/PProvost/vim-ps1.git
 [submodule "vim/bundle/vim-rails"]
 	path = vim/bundle/vim-rails
 	url = https://github.com/tpope/vim-rails
