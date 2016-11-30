@@ -4,6 +4,9 @@
 [submodule "vim/bundle/calendar.vim--Matsumoto"]
 	path = vim/bundle/calendar.vim--Matsumoto
 	url = https://github.com/vim-scripts/calendar.vim--Matsumoto.git
+[submodule "vim/bundle/ctrlp.vim"]
+	path = vim/bundle/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
 [submodule "vim/bundle/FuzzyFinder"]
 	path = vim/bundle/FuzzyFinder
 	url = https://github.com/vim-scripts/FuzzyFinder.git
