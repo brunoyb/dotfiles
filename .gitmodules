@@ -86,6 +86,9 @@
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround
+[submodule "vim/bundle/vim-syntastic"]
+	path = vim/bundle/vim-syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
 [submodule "vim/bundle/vim-vividchalk"]
 	path = vim/bundle/vim-vividchalk
 	url = https://github.com/tpope/vim-vividchalk.git
