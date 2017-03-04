@@ -1,7 +1,50 @@
 set nocompatible
 
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
+if has("unix")
+	let plugdir='~/.vim/plugged'
+elseif has("win32")
+	let plugdir='~\vimfiles\plugged'
+endif
+
+call plug#begin(plugdir)
+
+Plug 'altercation/vim-colors-solarized'
+Plug 'ciaranm/inkpot'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'derekwyatt/vim-fswitch'
+Plug 'godlygeek/tabular'
+Plug 'guns/jellyx.vim'
+Plug 'majutsushi/tagbar'
+Plug 'msanders/snipmate.vim'
+Plug 'nanotech/jellybeans.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-vividchalk'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/FuzzyFinder'
+Plug 'vim-scripts/L9'
+Plug 'vim-scripts/bufkill.vim'
+Plug 'vim-scripts/calendar.vim--Matsumoto'
+Plug 'vim-scripts/molokai'
+Plug 'vim-scripts/renamer.vim'
+Plug 'vim-syntastic/syntastic'
+Plug 'vimwiki/vimwiki'
+
+call plug#end()
+
+set encoding=utf-8
+set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:netrw_dirhistmax = 0
 
 if has("win32") && has("gui_running")
 	set lines=24
