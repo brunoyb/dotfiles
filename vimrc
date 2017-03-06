@@ -8,16 +8,13 @@ endif
 
 call plug#begin(plugdir)
 
-Plug 'altercation/vim-colors-solarized'
-Plug 'ciaranm/inkpot'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'derekwyatt/vim-fswitch'
 Plug 'godlygeek/tabular'
-Plug 'guns/jellyx.vim'
 Plug 'majutsushi/tagbar'
 Plug 'msanders/snipmate.vim'
-Plug 'nanotech/jellybeans.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'tomasr/molokai'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
@@ -30,21 +27,17 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vividchalk'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-scripts/FuzzyFinder'
-Plug 'vim-scripts/L9'
-Plug 'vim-scripts/bufkill.vim'
-Plug 'vim-scripts/calendar.vim--Matsumoto'
-Plug 'vim-scripts/molokai'
-Plug 'vim-scripts/renamer.vim'
 Plug 'vim-syntastic/syntastic'
-Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
 set encoding=utf-8
 set laststatus=2
-let g:airline_powerline_fonts = 1
+
 let g:netrw_dirhistmax = 0
+
+let g:airline_symbols_ascii = 1
+let g:airline#extensions#tabline#enabled = 1
 
 if has("win32") && has("gui_running")
 	set lines=24
@@ -127,11 +120,11 @@ set autoindent
 " set smartindent
 
 " statusline {{{1
-set statusline=%<%t\ %y%{GetEncoding()}%m%h%w%r%=%-14.(%l,%c%V%)\ %P
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline=%<%t\ %y%{GetEncoding()}%m%h%w%r%=%-14.(%l,%c%V%)\ %P
+"
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -146,7 +139,7 @@ scriptencoding
 " set showbreak=+++
 
 " colorscheme {{{1
-colorscheme molokai
+silent! colorscheme molokai
 
 " misc {{{1
 let NERDTreeChDirMode = 2

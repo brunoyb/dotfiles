@@ -2,10 +2,6 @@ Installation:
 
 	$ git clone https://github.com/brunoyb/dotfiles.git && cd dotfiles
 
-Checkout Vim plugins:
-
-	$ git submodule update --init
-
 Create symlinks (Linux Bash):
 
 	$ ln -s "$(pwd)/bash_aliases" ~/.bash_aliases
@@ -29,3 +25,17 @@ Create symlinks (Windows PowerShell 5.0):
 	$ New-Item -ItemType SymbolicLink -Path $home\.inputrc -Target $pwd\inputrc
 	$ New-Item -ItemType SymbolicLink -Path $home\vimfiles -Target $pwd\vim
 	$ New-Item -ItemType SymbolicLink -Path $home\_vimrc -Target $pwd\vimrc
+
+Download vim-plug (Linux Bash):
+
+	$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+Download vim-plug (Windows PowerShell 5.0):
+
+	$ md ~\vimfiles\autoload
+	$ $uri = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+	$ (New-Object Net.WebClient).DownloadFile($uri, $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath("~\vimfiles\autoload\plug.vim"))
+
+Setup:
+
+	$ vim +PlugInstall +qall
