@@ -12,16 +12,17 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'derekwyatt/vim-fswitch'
 Plug 'godlygeek/tabular'
 Plug 'majutsushi/tagbar'
+Plug 'mhinz/vim-signify'
 Plug 'msanders/snipmate.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vividchalk'
@@ -39,6 +40,8 @@ let g:netrw_dirhistmax = 0
 let g:airline_symbols_ascii = 1
 let g:airline#extensions#tabline#enabled = 1
 
+let g:ctrlp_extensions = ['tag']
+
 if has("win32") && has("gui_running")
 	set lines=24
 	set columns=80
@@ -50,11 +53,24 @@ if has("win32") && has("gui_running")
 endif
 
 " general {{{1
-set cryptmethod=blowfish
+if has('path_extra')
+	setglobal tags-=./tags tags-=./tags; tags^=./tags;
+endif
+
+set autoread
+set backspace=indent,eol,start
+set complete-=i
+set nocursorline
+silent! set cryptmethod=blowfish2
+set formatoptions+=j
 set hidden
-set showcmd
-set virtualedit=all
+set ignorecase smartcase
 set nojoinspaces
+set nrformats-=octal
+set ruler
+set showcmd
+set smarttab
+set virtualedit=all
 
 " functions {{{1
 " GetEncoding() {{{2
@@ -101,6 +117,8 @@ endif
 
 " scrolling {{{1
 set nowrap
+set scrolloff=1
+set sidescrolloff=5
 
 " folding {{{1
 set foldenable
@@ -133,10 +151,7 @@ let g:syntastic_check_on_wq = 0
 
 " show unprintable characters {{{1
 set list
-scriptencoding utf-8
-set listchars=tab:>·,trail:·,extends:»,precedes:«,nbsp:+
-scriptencoding
-" set showbreak=+++
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 
 " colorscheme {{{1
 silent! colorscheme molokai
@@ -206,3 +221,4 @@ nnoremap <silent> <F7> <ESC><C-W>W
 inoremap <silent> <F7> <ESC><C-W>W
 nnoremap <silent> <F8> <ESC><C-W>w
 inoremap <silent> <F8> <ESC><C-W>w
+nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>

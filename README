@@ -10,9 +10,8 @@ Create symlinks (Linux Bash):
 	$ ln -s "$(pwd)/bash_logout" ~/.bash_logout
 	$ ln -s "$(pwd)/bash_profile" ~/.bash_profile
 	$ ln -s "$(pwd)/bashrc" ~/.bashrc
-	$ ln -s "$(pwd)/ctags" ~/.ctags
 	$ ln -s "$(pwd)/emacs.d" ~/.emacs.d
-	$ ln -s "$(pwd)/gvimrc" ~/.gvimrc
+	$ ln -s "$(pwd)/git_template" ~/.git_template
 	$ ln -s "$(pwd)/inputrc" ~/.inputrc
 	$ ln -s "$(pwd)/profile" ~/.profile
 	$ ln -s "$(pwd)/vim" ~/.vim
@@ -21,10 +20,11 @@ Create symlinks (Linux Bash):
 
 Create symlinks (Windows PowerShell 5.0):
 
-	$ New-Item -ItemType SymbolicLink -Path $home\.emacs.d -Target $pwd\emacs.d
-	$ New-Item -ItemType SymbolicLink -Path $home\.inputrc -Target $pwd\inputrc
-	$ New-Item -ItemType SymbolicLink -Path $home\vimfiles -Target $pwd\vim
-	$ New-Item -ItemType SymbolicLink -Path $home\_vimrc -Target $pwd\vimrc
+	$ New-Item -ItemType SymbolicLink -Path ~\.emacs.d -Target "$(pwd)\emacs.d"
+	$ New-Item -ItemType SymbolicLink -Path ~\.git_template -Target "$(pwd)\git_template"
+	$ New-Item -ItemType SymbolicLink -Path ~\.inputrc -Target "$(pwd)\inputrc"
+	$ New-Item -ItemType SymbolicLink -Path ~\vimfiles -Target "$(pwd)\vim"
+	$ New-Item -ItemType SymbolicLink -Path ~\_vimrc -Target "$(pwd)\vimrc"
 
 Download vim-plug (Linux Bash):
 
