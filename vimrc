@@ -52,6 +52,12 @@ if has("win32") && has("gui_running")
 	set guioptions-=r
 endif
 
+if executable('ag')
+	let &grepprg = 'ag --nogroup --nocolor --column'
+	let g:ctrlp_user_command = 'ag -l --nocolor -g "" %s'
+	let g:ctrlp_use_caching = 0
+endif
+
 " general {{{1
 if has('path_extra')
 	setglobal tags-=./tags tags-=./tags; tags^=./tags;
