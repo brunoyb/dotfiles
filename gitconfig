@@ -1,0 +1,32 @@
+[user]
+	name = Bruno Baldochi
+[alias]
+	ctags = !.git/hooks/ctags
+	dt = difftool
+	mt = mergetool
+	st = status -sb
+[color]
+	ui = true
+[commit]
+	verbose = true
+[core]
+	editor = gvim
+[credential]
+	helper = manager
+[diff]
+	tool = gvimdiff2
+[difftool]
+	prompt = false
+[gitreview]
+	remote = origin
+[init]
+	templatedir = ~/.git_template
+[merge]
+	tool = gvimdiff2
+[mergetool]
+	prompt = false
+	keepbackup = false
+[pull]
+	rebase = true
+[push]
+	default = simple
