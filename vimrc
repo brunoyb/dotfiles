@@ -8,6 +8,7 @@ endif
 
 call plug#begin(plugdir)
 
+Plug 'PProvost/vim-ps1'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'derekwyatt/vim-fswitch'
 Plug 'godlygeek/tabular'
