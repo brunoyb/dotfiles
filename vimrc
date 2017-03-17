@@ -26,6 +26,7 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vividchalk'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -54,10 +55,16 @@ if has("win32") && has("gui_running")
 endif
 
 if executable('ag')
-	let &grepprg = 'ag --nogroup --nocolor --column'
+	set grepprg=ag\ --vimgrep
+	set grepformat=%f:%l:%c:%m
+
 	let g:ctrlp_user_command = 'ag -l --nocolor -g "" %s'
 	let g:ctrlp_use_caching = 0
 endif
+
+command! -nargs=1 -bar Grep execute 'silent! grep! <q-args>' | redraw! | cwindow
+
+nnoremap K :Grep <cword><CR>
 
 " general {{{1
 if has('path_extra')
