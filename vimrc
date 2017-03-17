@@ -54,8 +54,14 @@ if has("win32") && has("gui_running")
 	set guioptions-=r
 endif
 
-if executable('ag')
-	set grepprg=ag\ --vimgrep
+if executable('pt') && has("win32")
+	set grepprg=pt\ /nogroup\ /nocolor\ /column
+	set grepformat=%f:%l:%c:%m
+
+	let g:ctrlp_user_command = 'pt /l /nocolor /g "" %s'
+	let g:ctrlp_use_caching = 0
+elseif executable('ag')
+	set grepprg=ag\ --nogroup\ --nocolor\ --column
 	set grepformat=%f:%l:%c:%m
 
 	let g:ctrlp_user_command = 'ag -l --nocolor -g "" %s'
