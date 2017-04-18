@@ -11,8 +11,6 @@
 	verbose = true
 [core]
 	editor = gvim
-[credential]
-	helper = manager
 [diff]
 	tool = gvimdiff2
 [difftool]
