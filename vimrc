@@ -1,8 +1,8 @@
 set nocompatible
 
-if has("unix")
+if has('unix')
 	let plugdir='~/.vim/plugged'
-elseif has("win32")
+elseif has('win32')
 	let plugdir='~\vimfiles\plugged'
 endif
 
@@ -44,7 +44,7 @@ let g:airline#extensions#tabline#enabled = 1
 
 let g:ctrlp_extensions = ['tag']
 
-if has("win32") && has("gui_running")
+if has('win32') && has('gui_running')
 	set lines=24
 	set columns=80
 	set guifont=Consolas:h14
@@ -54,17 +54,11 @@ if has("win32") && has("gui_running")
 	set guioptions-=r
 endif
 
-if executable('pt') && has("win32")
-	set grepprg=pt\ /nogroup\ /nocolor\ /column
+if executable('rg')
+	set grepprg=rg\ --no-heading\ --vimgrep
 	set grepformat=%f:%l:%c:%m
 
-	let g:ctrlp_user_command = 'pt /l /nocolor /g "" %s'
-	let g:ctrlp_use_caching = 0
-elseif executable('ag')
-	set grepprg=ag\ --nogroup\ --nocolor\ --column
-	set grepformat=%f:%l:%c:%m
-
-	let g:ctrlp_user_command = 'ag -l --nocolor -g "" %s'
+	let g:ctrlp_user_command = 'rg --color never --glob "" --files %s'
 	let g:ctrlp_use_caching = 0
 endif
 
@@ -101,7 +95,7 @@ endfunction
 " RestoreCursor() {{{2
 function! RestoreCursor()
 	if line("'\"") > 0 && line("'\"") <= line("$")
-		execute "normal! g`\""
+		execute 'normal! g`"'
 	endif
 endfunction
 
@@ -127,10 +121,10 @@ augroup END
 set backup
 set undofile
 
-if has("unix")
+if has('unix')
 	set backupdir^=~/.vim/backup
 	set undodir^=~/.vim/undo
-elseif has("win32")
+elseif has('win32')
 	set backupdir^=~\vimfiles\backup
 	set undodir^=~\vimfiles\undo
 endif
