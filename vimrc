@@ -55,7 +55,7 @@ if has('win32') && has('gui_running')
 endif
 
 if executable('rg')
-	set grepprg=rg\ --no-heading\ --vimgrep
+	set grepprg=rg\ --vimgrep
 	set grepformat=%f:%l:%c:%m
 
 	let g:ctrlp_user_command = 'rg --color never --glob "" --files %s'
