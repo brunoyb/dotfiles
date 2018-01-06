@@ -8,13 +8,12 @@ endif
 
 call plug#begin(plugdir)
 
-Plug 'PProvost/vim-ps1'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'derekwyatt/vim-fswitch'
 Plug 'godlygeek/tabular'
-Plug 'majutsushi/tagbar'
 Plug 'mhinz/vim-signify'
 Plug 'msanders/snipmate.vim'
+Plug 'PProvost/vim-ps1'
 Plug 'scrooloose/nerdtree'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-commentary'
@@ -176,28 +175,6 @@ let NERDTreeWinSize = 30
 " let loaded_matchparen = 1 " don't highlight matching parens
 " let g:load_doxygen_syntax = 1
 
-" let g:vimwiki_browsers = ['chromium']
-let g:vimwiki_list = [{
-	\ 'template_path': '~/vimwiki_html/templates/',
-	\ 'template_default': 'default',
-	\ 'template_ext': '.tpl'
-\ }, {
-	\ 'path': '~/dropbox/MeuCarrinho/Gestão de Benchmarking/wiki_raw',
-	\ 'path_html': '~/dropbox/MeuCarrinho/Gestão de Benchmarking/wiki_html',
-	\ 'template_path': '~/dropbox/MeuCarrinho/Gestão de Benchmarking/wiki_html/templates/',
-	\ 'template_default': 'default',
-	\ 'template_ext': '.tpl'
-\ }]
-
-let g:tagbar_width = 30
-let g:tagbar_type_vimwiki = {
-	\ 'ctagstype' : 'vimwiki',
-	\ 'kinds'     : [
-		\ 'h:Headers'
-	\ ],
-	\ 'sort'      : 0
-\ }
-
 " keybindings {{{1
 nmap <silent> ,N :<C-U>execute 'bprevious ' . (v:count == 0 ? '' : v:count)<CR>
 nmap <silent> ,P :<C-U>execute 'bnext     ' . (v:count == 0 ? '' : v:count)<CR>
@@ -225,8 +202,6 @@ nnoremap <silent> ,s <C-W>s
 nnoremap <silent> ,v <C-W>v
 nnoremap <silent> <F2> <ESC>:NERDTreeToggle<CR>
 inoremap <silent> <F2> <ESC>:NERDTreeToggle<CR>
-nnoremap <silent> <F3> <ESC>:TagbarToggle<CR>
-inoremap <silent> <F3> <ESC>:TagbarToggle<CR>
 nnoremap <silent> <F5> <ESC>:bprevious<CR>
 inoremap <silent> <F5> <ESC>:bprevious<CR>
 nnoremap <silent> <F6> <ESC>:bnext<CR>
