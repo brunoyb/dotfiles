@@ -32,6 +32,8 @@ git clone https://github.com/brunoyb/dotfiles.git
 
 cd dotfiles
 
+"ls '$pwd\powershell_profile.d\*.ps1' | % { . `$_.FullName }" | Out-File -Encoding UTF8 -Append $PROFILE
+
 curl -fLo ~\vimfiles\autoload\plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 New-Item -ItemType SymbolicLink -Path ~\.emacs.d -Target "$(pwd)\emacs.d"
