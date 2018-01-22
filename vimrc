@@ -65,6 +65,12 @@ command! -nargs=1 -bar Grep execute 'silent! grep! <q-args>' | redraw! | cwindow
 
 nnoremap K :Grep <cword><CR>
 
+if has('unnamedplus')
+	set clipboard=unnamedplus
+else
+	set clipboard=unnamed
+endif
+
 " general {{{1
 if has('path_extra')
 	setglobal tags-=./tags tags-=./tags; tags^=./tags;
