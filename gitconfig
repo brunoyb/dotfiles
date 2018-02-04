@@ -4,7 +4,7 @@
 	ctags = !.git/hooks/ctags
 	dt = difftool
 	mt = mergetool
-	st = status -sb
+	st = status --short --branch
 [color]
 	ui = true
 [commit]
