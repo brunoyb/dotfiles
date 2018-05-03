@@ -1,1 +1,0 @@
-﻿Remove-Item alias:\curl

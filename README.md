@@ -34,7 +34,7 @@ cd dotfiles
 
 "ls '$pwd\powershell_profile.d\*.ps1' | % { . `$_.FullName }" | Out-File -Encoding UTF8 -Append $PROFILE
 
-curl -fLo ~\vimfiles\autoload\plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl.exe -fLo ~\vimfiles\autoload\plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 cmd /c 'MKLINK /D %USERPROFILE%\.emacs.d      %CD%\emacs.d'
 cmd /c 'MKLINK    %USERPROFILE%\.gitconfig    %CD%\gitconfig'
