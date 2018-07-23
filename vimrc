@@ -14,6 +14,7 @@ Plug 'godlygeek/tabular'
 Plug 'mhinz/vim-signify'
 Plug 'msanders/snipmate.vim'
 Plug 'PProvost/vim-ps1'
+Plug 'qpkorr/vim-bufkill'
 Plug 'scrooloose/nerdtree'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-commentary'
@@ -173,10 +174,10 @@ let NERDTreeWinSize = 30
 " let g:load_doxygen_syntax = 1
 
 " keybindings {{{1
-nmap <silent> ,N :<C-U>execute 'bprevious ' . (v:count == 0 ? '' : v:count)<CR>
-nmap <silent> ,P :<C-U>execute 'bnext     ' . (v:count == 0 ? '' : v:count)<CR>
-nmap <silent> ,n :<C-U>execute 'bnext     ' . (v:count == 0 ? '' : v:count)<CR>
-nmap <silent> ,p :<C-U>execute 'bprevious ' . (v:count == 0 ? '' : v:count)<CR>
+nnoremap <silent> ,n :<C-U>execute 'bnext     ' . (v:count == 0 ? '' : v:count)<CR>
+nnoremap <silent> ,N :<C-U>execute 'bprevious ' . (v:count == 0 ? '' : v:count)<CR>
+nnoremap <silent> ,P :<C-U>execute 'bnext     ' . (v:count == 0 ? '' : v:count)<CR>
+nnoremap <silent> ,p :<C-U>execute 'bprevious ' . (v:count == 0 ? '' : v:count)<CR>
 nnoremap <silent> ,1 :buffer  1<CR>
 nnoremap <silent> ,2 :buffer  2<CR>
 nnoremap <silent> ,3 :buffer  3<CR>
@@ -197,14 +198,14 @@ nnoremap <silent> ,l <C-W>l
 nnoremap <silent> ,o <C-W>o
 nnoremap <silent> ,s <C-W>s
 nnoremap <silent> ,v <C-W>v
-nnoremap <silent> <F2> <ESC>:NERDTreeToggle<CR>
+nnoremap <silent> <F2>      :NERDTreeToggle<CR>
 inoremap <silent> <F2> <ESC>:NERDTreeToggle<CR>
-nnoremap <silent> <F5> <ESC>:bprevious<CR>
+nnoremap <silent> <F5>      :bprevious<CR>
 inoremap <silent> <F5> <ESC>:bprevious<CR>
-nnoremap <silent> <F6> <ESC>:bnext<CR>
+nnoremap <silent> <F6>      :bnext<CR>
 inoremap <silent> <F6> <ESC>:bnext<CR>
-nnoremap <silent> <F7> <ESC><C-W>W
+nnoremap <silent> <F7>      <C-W>W
 inoremap <silent> <F7> <ESC><C-W>W
-nnoremap <silent> <F8> <ESC><C-W>w
+nnoremap <silent> <F8>      <C-W>w
 inoremap <silent> <F8> <ESC><C-W>w
 nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
