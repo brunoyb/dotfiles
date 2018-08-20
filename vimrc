@@ -18,6 +18,7 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'scrooloose/nerdtree'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
@@ -208,4 +209,6 @@ nnoremap <silent> <F7>      <C-W>W
 inoremap <silent> <F7> <ESC><C-W>W
 nnoremap <silent> <F8>      <C-W>w
 inoremap <silent> <F8> <ESC><C-W>w
+nnoremap <silent> <F9>      :Dispatch<CR>
+inoremap <silent> <F9> <ESC>:Dispatch<CR>
 nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
