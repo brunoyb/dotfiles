@@ -129,11 +129,13 @@ set backup
 set undofile
 
 if has('unix')
-	set backupdir^=~/.vim/backup
-	set undodir^=~/.vim/undo
+	set backupdir^=~/.vim/backup//
+	set directory^=~/.vim/swap//
+	set undodir^=~/.vim/undo//
 elseif has('win32')
-	set backupdir^=~\vimfiles\backup
-	set undodir^=~\vimfiles\undo
+	set backupdir^=~\vimfiles\backup//
+	set directory^=~\vimfiles\swap//
+	set undodir^=~\vimfiles\undo//
 endif
 
 " scrolling {{{1
