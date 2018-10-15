@@ -10,9 +10,9 @@
 [commit]
 	verbose = true
 [core]
-	editor = gvim
+	editor = vim
 [diff]
-	tool = gvimdiff2
+	tool = vimdiff2
 [difftool]
 	prompt = false
 [fetch]
@@ -22,7 +22,7 @@
 [init]
 	templatedir = ~/.git_template
 [merge]
-	tool = gvimdiff2
+	tool = vimdiff2
 [mergetool]
 	prompt = false
 	keepbackup = false
@@ -30,3 +30,5 @@
 	rebase = true
 [push]
 	default = simple
+[include]
+	path = .gitconfig.local
