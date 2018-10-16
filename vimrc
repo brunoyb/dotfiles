@@ -10,6 +10,7 @@ call plug#begin(plugdir)
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'derekwyatt/vim-fswitch'
+Plug 'fatih/vim-go'
 Plug 'godlygeek/tabular'
 Plug 'mhinz/vim-signify'
 Plug 'msanders/snipmate.vim'
