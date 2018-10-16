@@ -17,8 +17,6 @@
 	prompt = false
 [fetch]
 	prune = true
-[gitreview]
-	remote = origin
 [init]
 	templatedir = ~/.git_template
 [merge]
@@ -31,4 +29,4 @@
 [push]
 	default = simple
 [include]
-	path = .gitconfig.local
+	path = ~/.gitconfig.local
