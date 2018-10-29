@@ -16,7 +16,6 @@ Plug 'mhinz/vim-signify'
 Plug 'msanders/snipmate.vim'
 Plug 'PProvost/vim-ps1'
 Plug 'qpkorr/vim-bufkill'
-Plug 'scrooloose/nerdtree'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
@@ -26,9 +25,12 @@ Plug 'tpope/vim-git'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-vividchalk'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -40,6 +42,9 @@ set encoding=utf-8
 set laststatus=2
 
 let g:netrw_dirhistmax = 0
+
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_text_changed = 'never'
 
 let g:airline_symbols_ascii = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -171,29 +176,7 @@ set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 " colorscheme {{{1
 silent! colorscheme molokai
 
-" misc {{{1
-let NERDTreeChDirMode = 2
-let NERDTreeWinSize = 30
-" let loaded_matchparen = 1 " don't highlight matching parens
-" let g:load_doxygen_syntax = 1
-
 " keybindings {{{1
-nnoremap <silent> ,n :<C-U>execute 'bnext     ' . (v:count == 0 ? '' : v:count)<CR>
-nnoremap <silent> ,N :<C-U>execute 'bprevious ' . (v:count == 0 ? '' : v:count)<CR>
-nnoremap <silent> ,P :<C-U>execute 'bnext     ' . (v:count == 0 ? '' : v:count)<CR>
-nnoremap <silent> ,p :<C-U>execute 'bprevious ' . (v:count == 0 ? '' : v:count)<CR>
-nnoremap <silent> ,1 :buffer  1<CR>
-nnoremap <silent> ,2 :buffer  2<CR>
-nnoremap <silent> ,3 :buffer  3<CR>
-nnoremap <silent> ,4 :buffer  4<CR>
-nnoremap <silent> ,5 :buffer  5<CR>
-nnoremap <silent> ,6 :buffer  6<CR>
-nnoremap <silent> ,7 :buffer  7<CR>
-nnoremap <silent> ,8 :buffer  8<CR>
-nnoremap <silent> ,9 :buffer  9<CR>
-nnoremap <silent> ,0 :buffer 10<CR>
-nnoremap <silent> ,d :bd<CR>
-nnoremap <silent> ,c :BD<CR>
 nnoremap <silent> ,, <C-^>
 nnoremap <silent> ,h <C-W>h
 nnoremap <silent> ,j <C-W>j
@@ -202,16 +185,5 @@ nnoremap <silent> ,l <C-W>l
 nnoremap <silent> ,o <C-W>o
 nnoremap <silent> ,s <C-W>s
 nnoremap <silent> ,v <C-W>v
-nnoremap <silent> <F2>      :NERDTreeToggle<CR>
-inoremap <silent> <F2> <ESC>:NERDTreeToggle<CR>
-nnoremap <silent> <F5>      :bprevious<CR>
-inoremap <silent> <F5> <ESC>:bprevious<CR>
-nnoremap <silent> <F6>      :bnext<CR>
-inoremap <silent> <F6> <ESC>:bnext<CR>
-nnoremap <silent> <F7>      <C-W>W
-inoremap <silent> <F7> <ESC><C-W>W
-nnoremap <silent> <F8>      <C-W>w
-inoremap <silent> <F8> <ESC><C-W>w
-nnoremap <silent> <F9>      :Dispatch<CR>
-inoremap <silent> <F9> <ESC>:Dispatch<CR>
-nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+
+nnoremap <F9> :Dispatch<CR>
