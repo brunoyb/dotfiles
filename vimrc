@@ -88,8 +88,8 @@ endif
 set autoread
 set backspace=indent,eol,start
 set complete-=i
-set nocursorline
 silent! set cryptmethod=blowfish2
+set nocursorline
 set formatoptions+=j
 set hidden
 set ignorecase smartcase
@@ -98,6 +98,7 @@ set nrformats-=octal
 set ruler
 set showcmd
 set smarttab
+set nostartofline
 set virtualedit=all
 
 " functions {{{1
