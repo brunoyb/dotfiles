@@ -44,8 +44,7 @@ set laststatus=2
 
 let g:netrw_dirhistmax = 0
 
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_text_changed = 'never'
+let g:ale_linters_explicit = 1
 
 let g:airline_symbols_ascii = 1
 let g:airline#extensions#tabline#enabled = 1
