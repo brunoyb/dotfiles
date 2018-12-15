@@ -1,21 +1,4 @@
-BASH_COMPLETION_USER_DIR=${HOME}/.bash_completion.d
-
-# Blacklisted completions, causing problems with our code.
-_blacklist_glob='@(acroread.sh)'
-
-# Glob for matching various backup files.
-_backup_glob='@(#*#|*@(~|.@(bak|orig|rej|swp|dpkg*|rpm@(orig|new|save))))'
-
-# Source user completion directory definitions.
-if [[ -d $BASH_COMPLETION_USER_DIR && -r $BASH_COMPLETION_USER_DIR && \
-		-x $BASH_COMPLETION_USER_DIR ]]; then
-	for i in $(LC_ALL=C command ls "$BASH_COMPLETION_USER_DIR"); do
-		i=$BASH_COMPLETION_USER_DIR/$i
-		[[ ${i##*/} != @($_backup_glob|Makefile*|$_blacklist_glob) \
-				&& -f $i && -r $i ]] && . "$i"
-	done
-fi
-
-unset i
-unset _blacklist_glob _backup_glob
-unset BASH_COMPLETION_USER_DIR
+for f in ~/.bash_completion.d/*
+do
+	[ -f "$f" ] && . "$f"
+done
