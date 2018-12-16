@@ -14,9 +14,13 @@ ln -s "$(pwd)/git_template"      ~/.git_template
 ln -s "$(pwd)/gitconfig"         ~/.gitconfig
 ln -s "$(pwd)/inputrc"           ~/.inputrc
 ln -s "$(pwd)/profile"           ~/.profile
+ln -s "$(pwd)/tmux"              ~/.tmux
+ln -s "$(pwd)/tmux.conf"         ~/.tmux.conf
 ln -s "$(pwd)/vim"               ~/.vim
 ln -s "$(pwd)/vimrc"             ~/.vimrc
 ln -s "$(pwd)/Xresources"        ~/.Xresources
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
