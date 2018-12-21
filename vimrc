@@ -94,7 +94,6 @@ set complete-=i
 silent! set cryptmethod=blowfish2
 set nocursorline
 set formatoptions+=j
-set hidden
 set ignorecase smartcase
 set nojoinspaces
 set nrformats-=octal
