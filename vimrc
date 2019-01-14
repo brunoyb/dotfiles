@@ -54,6 +54,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:ctrlp_extensions = ['tag']
 
 let g:go_doc_keywordprg_enabled = 0
+let g:go_fmt_command = 'goimports'
 
 if has('win32') && has('gui_running')
 	set lines=24
