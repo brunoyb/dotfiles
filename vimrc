@@ -47,17 +47,14 @@ call plug#end()
 set encoding=utf-8
 set laststatus=2
 
-let g:netrw_dirhistmax = 0
-
-let g:ale_linters_explicit = 1
-
-let g:airline_symbols_ascii = 1
 let g:airline#extensions#tabline#enabled = 1
-
+let g:airline_symbols_ascii = 1
+let g:ale_linters_explicit = 1
 let g:ctrlp_extensions = ['tag']
-
 let g:go_doc_keywordprg_enabled = 0
 let g:go_fmt_command = 'goimports'
+let g:netrw_dirhistmax = 0
+let g:terraform_fmt_on_save = 1
 
 if has('win32') && has('gui_running')
 	set lines=24
@@ -88,10 +85,6 @@ else
 endif
 
 " general {{{1
-if has('path_extra')
-	setglobal tags-=./tags tags-=./tags; tags^=./tags;
-endif
-
 set autoread
 set backspace=indent,eol,start
 set complete-=i
@@ -105,6 +98,7 @@ set ruler
 set showcmd
 set smarttab
 set nostartofline
+set tags^=./.git/tags;
 set virtualedit=all
 
 " functions {{{1
