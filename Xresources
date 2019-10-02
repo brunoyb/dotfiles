@@ -120,6 +120,7 @@ XTerm*loginShell: false
 XTerm*sessionMgt: false
 XTerm*highlightSelection: true
 XTerm*termName: xterm-256color
+XTerm*selectToClipboard: true
 
 XTerm*autoWrap: true
 XTerm*cursorBlink: true
