@@ -1,4 +1,6 @@
-[[ $- != *i* ]] && return # if not running interactively, don't do anything
+if [[ $- != *i* ]]; then
+	return # Shell is non-interactive. Be done now!
+fi
 
 # general {{{1
 export EDITOR=vim
