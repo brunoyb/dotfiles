@@ -132,6 +132,11 @@ augroup myvimrc
 	autocmd BufReadPost * call RestoreCursor()
 augroup END
 
+augroup mydispatch
+	autocmd!
+	autocmd FileType go let b:dispatch = 'go build ./...'
+augroup END
+
 " backup & undofile {{{1
 set backup
 set undofile
@@ -187,5 +192,3 @@ nnoremap <silent> ,l <C-W>l
 nnoremap <silent> ,o <C-W>o
 nnoremap <silent> ,s <C-W>s
 nnoremap <silent> ,v <C-W>v
-
-nnoremap <F9> :Dispatch<CR>
