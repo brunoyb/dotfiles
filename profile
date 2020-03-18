@@ -4,7 +4,7 @@ then
     eval "$(env -i /usr/libexec/path_helper -s)"
 fi
 
-GOPATH="$HOME/My/Code/go"
+GOPATH="$HOME/go"
 
 [ -d "/usr/local/opt/ruby/bin" ] && PATH="/usr/local/opt/ruby/bin:$PATH"
 
