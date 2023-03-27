@@ -72,7 +72,7 @@ fi
 # keychain {{{1
 if command -v keychain >/dev/null 2>&1
 then
-	eval $(keychain --eval --agents ssh --inherit any --quick --quiet id_rsa)
+	eval $(keychain --eval --agents ssh --inherit any --quick --quiet id_ed25519 id_rsa)
 fi
 
 # functions {{{1
