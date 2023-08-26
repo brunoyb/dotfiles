@@ -106,12 +106,12 @@ function bash_prompt()
 	then
 		local RV=""
 	else
-		local RV="${BW}[${BR}${RV}${BW}]"
+		local RV="${BW}[${BM}${RV}${BW}]"
 	fi
 
 	# }}}2
 
-	echo -n "${BW}[${UC}\u${BW}@${UC}\h${BW}:${BB}\w${BW}]${RV}${UC}"'\$'"${NONE} "
+	echo -n "${BW}[${UC}\u${BW}@${UC}\h${BW}:${BB}\w${BW}][${UC}${SHLVL}${BW}]${RV}${UC}"'\$'"${NONE} "
 }
 
 PROMPT_COMMAND='PS1="$(bash_prompt)"; '"$PROMPT_COMMAND"
