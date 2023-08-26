@@ -12,39 +12,14 @@ shopt -s histappend
 shopt -s checkwinsize
 
 # aliases {{{1
-case "$OSTYPE" in
-darwin*)
-	if command -v gls >/dev/null 2>&1
-	then
-		alias chgrp='gchgrp --preserve-root'
-		alias chmod='gchmod --preserve-root'
-		alias chown='gchown --preserve-root'
-		alias cp='gcp --interactive'
-		alias dircolors='gdircolors'
-		alias ln='gln --interactive'
-		alias ls='gls --color=auto --group-directories-first'
-		alias mv='gmv --interactive'
-		alias rm='grm --interactive=once'
-	else
-		alias cp='cp -i'
-		alias ln='ln -i'
-		alias ls='ls -G'
-		alias mv='mv -i'
-	fi
-
-	;;
-*)
-	alias chgrp='chgrp --preserve-root'
-	alias chmod='chmod --preserve-root'
-	alias chown='chown --preserve-root'
-	alias cp='cp --interactive'
-	alias ln='ln --interactive'
-	alias ls='ls --color=auto --group-directories-first'
-	alias mv='mv --interactive'
-	alias rm='rm --interactive=once'
-
-	;;
-esac
+alias chgrp='chgrp --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chown='chown --preserve-root'
+alias cp='cp --interactive'
+alias ln='ln --interactive'
+alias ls='ls --color=auto --group-directories-first'
+alias mv='mv --interactive'
+alias rm='rm --interactive=once'
 
 # ls {{{2
 alias la='ls -a'
