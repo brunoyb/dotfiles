@@ -1,27 +1,35 @@
 ! Xcursor {{{1
-Xcursor.theme: Vanilla-DMZ
-Xcursor.theme_core: true
-Xcursor.size: 16
+/* Xcursor.theme: Vanilla-DMZ */
+/* Xcursor.theme_core: true */
+/* Xcursor.size: 16 */
 
 ! Xft {{{1
-Xft.antialias: true
-Xft.autohint: false
-Xft.dpi: 96
-Xft.hinting: true
+Xft.antialias: 1
+Xft.hinting: 1
 Xft.hintstyle: hintfull
-Xft.lcdfilter: lcddefault
-Xft.rgba: rgb
+Xft.lcdfilter: none
+Xft.rgba: none
 
 ! URxvt {{{1
 URxvt*highlightSelection: true
-URxvt*loginShell: false
-URxvt*perl-ext-common: default,clipboard,keyboard-select,url-select
-URxvt*underlineURLs: true
-URxvt*url-launcher: chromium
+URxvt*loginShell: true
+URxvt*perl-ext-common: default,matcher
 URxvt*searchable-scrollback: Control-Meta-s
 URxvt*cursorBlink: true
 
 ! fonts {{{2
+URxvt*font:           -xos4-terminus-medium-r-normal--24-240-72-72-c-120-iso10646-1
+URxvt*boldFont:       -xos4-terminus-bold-r-normal--24-240-72-72-c-120-iso10646-1
+URxvt*italicFont:     -xos4-terminus-medium-o-normal--24-240-72-72-c-120-iso10646-1
+URxvt*boldItalicFont: -xos4-terminus-bold-o-normal--24-240-72-72-c-120-iso10646-1
+/* URxvt*font: xft:Iosevka Term:style=Regular:size=14 */
+/* URxvt*boldFont: xft:Iosevka Term:style=Bold:size=14 */
+/* URxvt*italicFont: xft:Iosevka Term:style=Italic:size=14 */
+/* URxvt*boldItalicFont: xft:Iosevka Term:style=Bold Italic:size=14 */
+/* URxvt*font: xft:Iosevka:size=7:hinting=true */
+/* URxvt*italicFont: xft:Iosevka:size=7:style=Italic:hinting=true */
+/* URxvt*boldFont: xft:Iosevka:size=7:style=Bold:hinting=true */
+/* URxvt*boldItalicFont: xft:Iosevka:size=7:style=Bold Italic:hinting=true */
 !URxvt*font:           -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1
 !URxvt*boldFont:       -xos4-terminus-bold-r-normal--14-140-72-72-c-80-iso10646-1
 !URxvt*italicFont:     -windows-dina-medium-i-normal--16-100-96-96-c-80-microsoft-cp1252
@@ -30,18 +38,24 @@ URxvt*cursorBlink: true
 !URxvt*boldFont:       -misc-fixed-bold-r-normal--18-120-100-100-c-90-iso10646-1
 !URxvt*italicFont:     -misc-fixed-medium-o-normal--13-120-75-75-c-80-iso10646-1
 !URxvt*boldItalicFont: -windows-dina-bold-i-normal--16-100-96-96-c-80-microsoft-cp1252
-URxvt*font:           xft:Terminus:style=Regular:pixelsize=14:antialias=False,\
-                      xft:IPAGothic:style=Regular,\
-                      xft:Baekmuk Gulim:style=Regular
-URxvt*boldFont:       xft:Terminus:style=Bold:pixelsize=14:antialias=False,\
-                      xft:IPAGothic:style=Bold,\
-                      xft:Baekmuk Gulim:style=Bold
-URxvt*italicFont:     xft:Dina:style=Italic:pixelsize=14:antialias=False,\
-                      xft:IPAGothic:style=Italic,\
-                      xft:Baekmuk Gulim:style=Italic
-URxvt*boldItalicFont: xft:Dina:style=Bold Italic:pixelsize=14:antialias=False,\
-                      xft:IPAGothic:style=Bold Italic,\
-                      xft:Baekmuk Gulim:style=Bold Italic
+/* URxvt*font:     xft:Terminus:size=19 */
+/* URxvt*font:     xft:Consolas:size=14 */
+/* URxvt*font:     xft:Hack:size=14 */
+/* URxvt*boldFont: xft:Hack:style=Bold:size=14 */
+/* URxvt*font:     xft:FantasqueSansMono:style=Regular:size=14 */
+/* URxvt*boldFont: xft:FantasqueSansMono:style=Bold:size=14 */
+/* URxvt*font:           xft:Terminus:style=Regular:pixelsize=14:antialias=False,\ */
+/*                       xft:IPAGothic:style=Regular,\ */
+/*                       xft:Baekmuk Gulim:style=Regular */
+/* URxvt*boldFont:       xft:Terminus:style=Bold:pixelsize=14:antialias=False,\ */
+/*                       xft:IPAGothic:style=Bold,\ */
+/*                       xft:Baekmuk Gulim:style=Bold */
+/* URxvt*italicFont:     xft:Dina:style=Italic:pixelsize=14:antialias=False,\ */
+/*                       xft:IPAGothic:style=Italic,\ */
+/*                       xft:Baekmuk Gulim:style=Italic */
+/* URxvt*boldItalicFont: xft:Dina:style=Bold Italic:pixelsize=14:antialias=False,\ */
+/*                       xft:IPAGothic:style=Bold Italic,\ */
+/*                       xft:Baekmuk Gulim:style=Bold Italic */
 
 ! bell {{{2
 URxvt*urgentOnBell: true
@@ -56,6 +70,19 @@ URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
 
 ! keybindings {{{2
+! Disable ISO 14755 unicode input so we can use Ctrl-Shift bindings
+URxvt.iso14755:        false
+URxvt.iso14755_52:     false
+
+! Disable Ctrl-Alt-c & Ctrl-Alt-v bindings (optional)
+URxvt.keysym.C-M-c:    builtin-string:
+URxvt.keysym.C-M-v:    builtin-string:
+
+! Bind Ctrl-Shift-c & Ctrl-Shift-v to copy and paste
+! I dont know why, but I needed to use hex keysym values to get it to work
+URxvt.keysym.C-S-0x43: eval:selection_to_clipboard
+URxvt.keysym.C-S-0x56: eval:paste_clipboard
+
 URxvt*keysym.Control-Up: \033[1;5A
 URxvt*keysym.Control-Right: \033[1;5C
 URxvt*keysym.Control-Down: \033[1;5B
@@ -116,11 +143,11 @@ URxvt*color15: #FFFFFF
 
 ! XTerm {{{1
 XTerm*allowSendEvents: true
-XTerm*loginShell: false
+XTerm*loginShell: true
 XTerm*sessionMgt: false
 XTerm*highlightSelection: true
 XTerm*termName: xterm-256color
-XTerm*selectToClipboard: true
+XTerm*selectToClipboard: false
 
 XTerm*autoWrap: true
 XTerm*cursorBlink: true
@@ -128,8 +155,10 @@ XTerm*metaSendsEscape: true
 XTerm*eightBitInput: false
 
 ! fonts {{{2
-XTerm*font:     -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1
-XTerm*boldFont: -xos4-terminus-bold-r-normal--14-140-72-72-c-80-iso10646-1
+/* XTerm*font:     -xos4-terminus-medium-r-normal--24-240-72-72-c-120-iso10646-1 */
+/* XTerm*boldFont: -xos4-terminus-bold-r-normal--24-240-72-72-c-120-iso10646-1 */
+XTerm*faceName: Iosevka Term:style=Regular
+XTerm*faceSize: 14
 
 ! bell {{{2
 XTerm*bellIsUrgent: true
@@ -144,8 +173,10 @@ XTerm*scrollTtyOutput: false
 
 ! keybindings {{{2
 XTerm*VT100.translations: #override \n\
-	Shift Meta <KeyPress> Prior: scroll-back(1, line) \n\
-	Shift Meta <KeyPress> Next: scroll-forw(1, line) \n\
+	Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+	Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
+	Shift Meta <Key>Next: scroll-forw(1, line) \n\
+	Shift Meta <Key>Prior: scroll-back(1, line) \n\
 
 ! scrollbar {{{2
 XTerm*scrollBar: false

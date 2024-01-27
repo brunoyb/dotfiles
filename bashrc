@@ -1,12 +1,15 @@
-if [[ $- != *i* ]]; then
-	return # Shell is non-interactive. Be done now!
-fi
+[[ $- != *i* ]] && return # If shell is non-interactive, then be done now!
 
 # general {{{1
 export EDITOR=vim
+export GIT_PS1_SHOWCOLORHINTS=true
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWSTASHSTATE=true
+export GIT_PS1_SHOWUNTRACKEDFILES=true
+export GIT_PS1_SHOWUPSTREAM=auto
 export HISTCONTROL=ignoreboth
-export HISTSIZE=1000
 export HISTFILESIZE=2000
+export HISTSIZE=1000
 
 shopt -s histappend
 shopt -s checkwinsize
@@ -34,7 +37,7 @@ alias grep='grep --color=auto'
 alias tsync='rsync -avz --delete-after'
 
 # dircolors {{{1
-if command -v dircolors >/dev/null 2>&1
+if command -v dircolors > /dev/null 2>&1
 then
 	if [ -f "$HOME/.dircolors" ]
 	then
@@ -45,7 +48,7 @@ then
 fi
 
 # keychain {{{1
-if command -v keychain >/dev/null 2>&1
+if command -v keychain > /dev/null 2>&1
 then
 	eval $(keychain --eval --agents ssh --inherit any --quick --quiet id_ed25519 id_rsa)
 fi
@@ -109,9 +112,17 @@ function bash_prompt()
 		local RV="${BW}[${BM}${RV}${BW}]"
 	fi
 
+	# git ps1 {{{2
+	if [ "$(type -t __git_ps1)" = 'function' ]
+	then
+		local GIT_PS1="$(__git_ps1 "${NONE} ${BW}(${NONE}%s${BW})")"
+	else
+		local GIT_PS1=""
+	fi
+
 	# }}}2
 
-	echo -n "${BW}[${UC}\u${BW}@${UC}\h${BW}:${BB}\w${BW}][${UC}${SHLVL}${BW}]${RV}${UC}"'\$'"${NONE} "
+	echo -n "${BW}[${UC}\u${BW}@${UC}\h${BW}:${BB}\w${GIT_PS1}${BW}]${RV}${UC}"'\$'"${NONE} "
 }
 
 PROMPT_COMMAND='PS1="$(bash_prompt)"; '"$PROMPT_COMMAND"
