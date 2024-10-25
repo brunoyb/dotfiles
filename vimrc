@@ -8,19 +8,15 @@ endif
 
 call plug#begin(plugdir)
 
+Plug 'PProvost/vim-ps1'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'dense-analysis/ale'
-Plug 'derekwyatt/vim-fswitch'
 Plug 'fatih/vim-go'
 Plug 'godlygeek/tabular'
 Plug 'hashivim/vim-terraform'
-Plug 'maksimr/vim-jsbeautify'
 Plug 'mhinz/vim-signify'
-Plug 'PProvost/vim-ps1'
-Plug 'qpkorr/vim-bufkill'
-Plug 'stephpy/vim-yaml'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dadbod'
 Plug 'tpope/vim-dispatch'
@@ -49,7 +45,6 @@ set laststatus=2
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_symbols_ascii = 1
-let g:ale_linters_explicit = 1
 let g:ctrlp_extensions = ['tag']
 let g:go_doc_keywordprg_enabled = 0
 let g:go_fmt_command = 'goimports'
