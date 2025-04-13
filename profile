@@ -1,15 +1,14 @@
 # Reset macOS PATH (notice the usage of `env -i` before the actual command)
-if [ -x /usr/libexec/path_helper ]
-then
+if [ -x /usr/libexec/path_helper ]; then
     eval "$(env -i /usr/libexec/path_helper -s)"
 fi
 
+EDITOR=vim
 GOPATH="$HOME/go"
 
 [ -d "/usr/local/opt/ruby/bin" ] && PATH="/usr/local/opt/ruby/bin:$PATH"
 
-if command -v ruby > /dev/null 2>&1 && command -v gem > /dev/null 2>&1
-then
+if command -v ruby > /dev/null 2>&1 && command -v gem > /dev/null 2>&1; then
     PATH="$(ruby -r rubygems -e 'puts Gem.dir')/bin:$PATH"
     PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
@@ -25,4 +24,4 @@ fi
 [ -d "$HOME/.tfenv/bin" ] && PATH="$HOME/.tfenv/bin:$PATH"
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
 
-export GOPATH PATH
+export EDITOR GOPATH PATH

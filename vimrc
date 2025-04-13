@@ -9,12 +9,12 @@ endif
 call plug#begin(plugdir)
 
 Plug 'PProvost/vim-ps1'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go'
 Plug 'godlygeek/tabular'
 Plug 'hashivim/vim-terraform'
 Plug 'mhinz/vim-signify'
-Plug 'tomasr/molokai'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-commentary'
@@ -36,7 +36,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-vividchalk'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
@@ -45,6 +44,7 @@ set laststatus=2
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_symbols_ascii = 1
+let g:airline_theme = 'catppuccin_frappe'
 let g:ctrlp_extensions = ['tag']
 let g:go_doc_keywordprg_enabled = 0
 let g:go_fmt_command = 'goimports'
@@ -83,8 +83,8 @@ endif
 set autoread
 set backspace=indent,eol,start
 set complete-=i
-silent! set cryptmethod=blowfish2
-set nocursorline
+set cryptmethod=blowfish2
+set cursorline
 set formatoptions+=j
 set ignorecase smartcase
 set nojoinspaces
@@ -94,6 +94,7 @@ set showcmd
 set smarttab
 set nostartofline
 set tags^=./.git/tags;
+set termguicolors
 set virtualedit=all
 
 " functions {{{1
@@ -176,7 +177,8 @@ set list
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 
 " colorscheme {{{1
-silent! colorscheme molokai
+silent! colorscheme catppuccin_mocha
+highlight Normal ctermbg=NONE guibg=NONE " make background transparent
 
 " keybindings {{{1
 nnoremap <silent> ,, <C-^>

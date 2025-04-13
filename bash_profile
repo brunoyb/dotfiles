@@ -2,10 +2,14 @@ if [ -f ~/.profile ]; then
 	. ~/.profile
 fi
 
+if [ -f ~/.profile_local ]; then
+	. ~/.profile_local
+fi
+
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
-if [ -f ~/.bash_local ]; then
-	. ~/.bash_local
+if [ -f ~/.bashrc_local ]; then
+	. ~/.bashrc_local
 fi

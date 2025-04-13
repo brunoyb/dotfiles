@@ -5,8 +5,6 @@ git clone https://github.com/brunoyb/dotfiles.git
 
 cd dotfiles
 
-ln -s "$(pwd)/bash_completion"   ~/.bash_completion
-ln -s "$(pwd)/bash_completion.d" ~/.bash_completion.d
 ln -s "$(pwd)/bash_profile"      ~/.bash_profile
 ln -s "$(pwd)/bashrc"            ~/.bashrc
 ln -s "$(pwd)/emacs.d"           ~/.emacs.d
@@ -14,13 +12,8 @@ ln -s "$(pwd)/git_template"      ~/.git_template
 ln -s "$(pwd)/gitconfig"         ~/.gitconfig
 ln -s "$(pwd)/inputrc"           ~/.inputrc
 ln -s "$(pwd)/profile"           ~/.profile
-ln -s "$(pwd)/tmux"              ~/.tmux
-ln -s "$(pwd)/tmux.conf"         ~/.tmux.conf
 ln -s "$(pwd)/vim"               ~/.vim
 ln -s "$(pwd)/vimrc"             ~/.vimrc
-ln -s "$(pwd)/Xresources"        ~/.Xresources
-
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
