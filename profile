@@ -1,16 +1,26 @@
-# Reset macOS PATH (notice the usage of `env -i` before the actual command)
-if [ -x /usr/libexec/path_helper ]; then
-    eval "$(env -i /usr/libexec/path_helper -s)"
-fi
-
 EDITOR=vim
 GOPATH="$HOME/go"
 
 [ -d "/usr/local/opt/ruby/bin" ] && PATH="/usr/local/opt/ruby/bin:$PATH"
 
 if command -v ruby > /dev/null 2>&1 && command -v gem > /dev/null 2>&1; then
-    PATH="$(ruby -r rubygems -e 'puts Gem.dir')/bin:$PATH"
-    PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+	PATH="$(ruby -r rubygems -e 'puts Gem.dir')/bin:$PATH"
+	PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+
+if [ -x /opt/homebrew/bin/brew ]; then
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+
+	[ -d "/opt/homebrew/opt/coreutils/libexec/gnubin" ] && PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+
+	if [ -d /opt/homebrew/etc/profile.d ]; then
+		for f in /opt/homebrew/etc/profile.d/*.sh; do
+			[ -r "$f" ] && . "$f"
+		done
+		unset f
+	fi
+
+	[ -r "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
 fi
 
 [ -d "$HOME/Library/Python/2.7/bin" ] && PATH="$HOME/Library/Python/2.7/bin:$PATH"
