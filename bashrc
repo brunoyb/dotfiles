@@ -29,5 +29,10 @@ function hex2dec() { awk "BEGIN { printf \"%d\n\", 0x$1 }"; }
 
 # keychain {{{1
 if command -v keychain > /dev/null 2>&1; then
-	eval $(keychain --eval --agents ssh --inherit any --quick --quiet id_ed25519)
+	eval "$(keychain --eval --ignore-missing --quiet id_ed25519 id_rsa)"
+fi
+
+# local {{{1
+if [ -f ~/.bashrc_local ]; then
+	. ~/.bashrc_local
 fi

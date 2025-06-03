@@ -35,3 +35,7 @@ fi
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
 
 export EDITOR GOPATH PATH
+
+if [ -f ~/.profile_local ]; then
+	. ~/.profile_local
+fi

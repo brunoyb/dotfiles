@@ -8,12 +8,12 @@ endif
 
 call plug#begin(plugdir)
 
-Plug 'PProvost/vim-ps1'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'fatih/vim-go'
 Plug 'godlygeek/tabular'
-Plug 'hashivim/vim-terraform'
+Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
+Plug 'google/vim-maktaba'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-characterize'
@@ -39,6 +39,11 @@ Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
+call glaive#Install()
+
+Glaive codefmt gofmt_executable=goimports
+Glaive codefmt plugin[mappings]
+
 set encoding=utf-8
 set laststatus=2
 
@@ -46,10 +51,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_symbols_ascii = 1
 let g:airline_theme = 'catppuccin_frappe'
 let g:ctrlp_extensions = ['tag']
-let g:go_doc_keywordprg_enabled = 0
-let g:go_fmt_command = 'goimports'
 let g:netrw_dirhistmax = 0
-let g:terraform_fmt_on_save = 1
 
 if has('win32') && has('gui_running')
 	set lines=24
