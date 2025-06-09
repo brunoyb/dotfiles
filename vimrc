@@ -10,6 +10,7 @@ call plug#begin(plugdir)
 
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'github/copilot.vim'
 Plug 'godlygeek/tabular'
 Plug 'google/vim-codefmt'
 Plug 'google/vim-glaive'
