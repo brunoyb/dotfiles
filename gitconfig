@@ -1,5 +1,5 @@
 [user]
-	name = Bruno Baldochi
+	name = Bruno Y. Baldochi
 [alias]
 	ctags = !.git/hooks/ctags
 	dt = difftool
