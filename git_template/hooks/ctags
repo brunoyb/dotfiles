@@ -1,13 +1,6 @@
 #!/bin/sh
-
 set -e
-
 PATH="/usr/local/bin:$PATH"
-dir="`git rev-parse --git-dir`"
-case `uname -o` in
-	Msys) dir_s='\' ;;
-	*)    dir_s='/' ;;
-esac
-trap 'rm -f "${dir}${dir_s}tags.$$"' EXIT INT TERM
-git ls-files | ctags --tag-relative -L - -f"${dir}${dir_s}tags.$$" --languages=-javascript,sql
-mv "${dir}${dir_s}tags.$$" "${dir}${dir_s}tags"
+trap 'rm -f "$$.tags"' EXIT
+git ls-files | ctags --tag-relative -L - -f"$$.tags" --languages=-javascript,sql
+mv "$$.tags" "tags"
