@@ -22,11 +22,6 @@ alias la='ls --color=auto --group-directories-first --all'
 alias ll='ls --color=auto --group-directories-first --human-readable -l'
 alias ls='ls --color=auto --group-directories-first'
 
-# functions {{{1
-function    calc() { awk "BEGIN { print $* }"; }
-function dec2hex() { awk "BEGIN { printf \"%x\n\",   $1 }"; }
-function hex2dec() { awk "BEGIN { printf \"%d\n\", 0x$1 }"; }
-
 # keychain {{{1
 if command -v keychain > /dev/null 2>&1; then
 	eval "$(keychain --eval --ignore-missing --quiet id_ed25519 id_rsa)"
