@@ -10,11 +10,7 @@ call plug#begin(plugdir)
 
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'github/copilot.vim'
 Plug 'godlygeek/tabular'
-Plug 'google/vim-codefmt'
-Plug 'google/vim-glaive'
-Plug 'google/vim-maktaba'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-characterize'
@@ -39,11 +35,6 @@ Plug 'tpope/vim-vividchalk'
 Plug 'vim-airline/vim-airline'
 
 call plug#end()
-
-call glaive#Install()
-
-Glaive codefmt gofmt_executable=goimports
-Glaive codefmt plugin[mappings]
 
 set encoding=utf-8
 set laststatus=2
