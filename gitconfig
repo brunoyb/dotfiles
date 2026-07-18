@@ -1,7 +1,6 @@
 [user]
 	name = Bruno Y. Baldochi
 [alias]
-	ctags = !.git/hooks/ctags
 	dt = difftool
 	mt = mergetool
 	st = status --short --branch
@@ -17,8 +16,6 @@
 	prompt = false
 [fetch]
 	prune = true
-[init]
-	templatedir = ~/.git_template
 [merge]
 	tool = vimdiff2
 [mergetool]
